@@ -1,31 +1,38 @@
-.header {
+.containerDekstop {
+  display: none;
+}
+
+.containerPhone {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 128px;
-  padding-right: 128px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-.link {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0%;
-  color: #121417;
+.navigation {
+  position: fixed;
+  top: 20%;
+  left: 45%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 300px;
+  height: 100vh;
 }
 
-/* Pages links */
-.pages {
+.menu {
   display: flex;
-  gap: 28px;
-  list-style-type: none;
-  text-decoration: none;
-  color: #121417;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-/* Logo link */
+/* Logo Icon */
 
 .logoLink {
   display: flex;
@@ -43,13 +50,55 @@
   padding-right: 8px;
 }
 
-/* Authorization links */
+/* Hamburger Button */
+
+.humburgerBtn {
+  background-color: white;
+  border: none;
+}
+
+.humburgerIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+}
+
+/* Close Button */
+
+.closeBtn {
+  display: flex;
+  margin-left: auto;
+  background-color: white;
+  border: none;
+}
+
+.closeIcon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Pages */
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Links */
+.link {
+  color: #121417;
+  transition: color 0.2s ease, color 0.2s ease;
+}
+
+/* Authorization */
 
 .authorization {
   display: flex;
-  gap: 28px;
-  list-style-type: none;
-  text-decoration: none;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .loginLink {
@@ -63,32 +112,69 @@
   letter-spacing: 0%;
 }
 
+.loginIcon {
+  padding-right: 2px;
+  color: #f4c550;
+  width: 20px;
+  height: 20px;
+}
+
 .registrationLink {
+  text-align: center;
   color: White;
   background-color: #121417;
   border: 1px solid #121417;
   border-radius: 12px;
   padding-left: 39px;
   padding-right: 39px;
-  padding: 14px 39px 14px 39px;
+  padding: 10px 10px 10px 10px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.registrationLink:hover {
-  background-color: white;
-  color: #121417;
-  font-weight: 600;
-}
+/* Dekstop */
+@media (min-width: 1280px) {
+  .containerPhone {
+    display: none;
+  }
 
-.registrationLink:focus {
-  background-color: white;
-  color: #121417;
-  font-weight: 600;
-}
+  .containerDekstop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 128px;
+    padding-right: 128px;
+  }
 
-.loginIcon {
-  padding-left: 8px;
-  color: #f4c550;
-  width: 20px;
-  height: 20px;
+  /* Pages links */
+  .pages {
+    flex-direction: row;
+  }
+
+  .link:hover {
+    color: #f4c550;
+  }
+
+  .link:focus {
+    color: #f4c550;
+  }
+
+  /* Authorization links */
+
+  .authorization {
+    flex-direction: row;
+  }
+
+  .registrationLink:hover {
+    background-color: white;
+    color: #121417;
+    font-weight: 600;
+  }
+
+  .registrationLink:focus {
+    background-color: white;
+    color: #121417;
+    font-weight: 600;
+  }
 }
