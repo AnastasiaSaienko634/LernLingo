@@ -1,0 +1,94 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 128px;
+  padding-right: 128px;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #121417;
+}
+
+/* Pages links */
+.pages {
+  display: flex;
+  gap: 28px;
+  list-style-type: none;
+  text-decoration: none;
+  color: #121417;
+}
+
+/* Logo link */
+
+.logoLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #121417;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+
+.logoIcon {
+  padding-right: 8px;
+}
+
+/* Authorization links */
+
+.authorization {
+  display: flex;
+  gap: 28px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.loginLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #121417;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+
+.registrationLink {
+  color: White;
+  background-color: #121417;
+  border: 1px solid #121417;
+  border-radius: 12px;
+  padding-left: 39px;
+  padding-right: 39px;
+  padding: 14px 39px 14px 39px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.registrationLink:hover {
+  background-color: white;
+  color: #121417;
+  font-weight: 600;
+}
+
+.registrationLink:focus {
+  background-color: white;
+  color: #121417;
+  font-weight: 600;
+}
+
+.loginIcon {
+  padding-left: 8px;
+  color: #f4c550;
+  width: 20px;
+  height: 20px;
+}

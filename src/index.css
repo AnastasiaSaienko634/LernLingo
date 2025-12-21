@@ -1,0 +1,12 @@
+* {
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li,
+ol {
+  list-style-type: none;
+}
