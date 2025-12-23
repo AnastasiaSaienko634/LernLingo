@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 20px;
@@ -19,20 +20,21 @@
   flex-direction: column;
   background-color: #f8f8f8;
   border-radius: 30px;
-  width: 720px;
-  height: 530px;
+  width: 100%;
+  max-width: 310px;
+  height: 450px;
 }
 
 .titleHero {
-  padding-top: 98px;
-  padding-bottom: 32px;
-  margin-left: 68px;
+  padding-top: 28px;
+  padding-bottom: 10px;
+  margin-left: 28px;
   font-weight: 500;
-  font-size: 43px;
+  font-size: 26px;
   line-height: 56px;
   letter-spacing: -2%;
 
-  width: 550px;
+  width: 250px;
 }
 
 .markerText {
@@ -43,21 +45,22 @@
 }
 
 .descriptionHero {
-  margin-left: 68px;
-  padding-bottom: 64px;
+  margin-left: 27px;
+  padding-bottom: 34px;
   text-align: left;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   letter-spacing: -2%;
 
-  width: 471px;
+  width: 280px;
 }
 
 .btnHero {
-  width: 267px;
-  margin-left: 68px;
-  padding: 16px 88px 16px 88px;
+  width: 150px;
+  margin-left: 28px;
+  padding: 16px 18px 16px 18px;
+  text-align: center;
   background-color: #f4c550;
   outline: none;
   border: none;
@@ -83,6 +86,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 32px;
 }
 
 .listReview {
@@ -115,4 +119,112 @@
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -2%;
+}
+
+@media (min-width: 760px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .leftBlock {
+    max-width: 720px;
+    height: 530px;
+  }
+
+  .titleHero {
+    padding-top: 98px;
+    padding-bottom: 32px;
+    margin-left: 68px;
+    font-size: 43px;
+
+    width: 550px;
+  }
+
+  .markerText {
+    background-color: #fbe9ba;
+    border-radius: 10px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .descriptionHero {
+    margin-left: 68px;
+    padding-bottom: 64px;
+    font-size: 16px;
+
+    width: 471px;
+  }
+
+  .btnHero {
+    width: 267px;
+    margin-left: 68px;
+    padding: 16px 88px 16px 88px;
+    background-color: #f4c550;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: 700;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .btnHero:hover {
+    cursor: pointer;
+    background-color: #fbe9ba;
+  }
+
+  .btnHero:focus {
+    cursor: pointer;
+    background-color: #fbe9ba;
+  }
+
+  .reviewBlock {
+    padding-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 32px;
+  }
+
+  .listReview {
+    display: flex;
+    gap: 100px;
+    padding: 40px 110px 40px 110px;
+    border: 3px dashed #f4c550;
+    border-radius: 30px;
+  }
+
+  .listItemReview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .reviewTitle {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -2%;
+  }
+
+  .reviewDescription {
+    width: 96px;
+    color: #121417b2;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -2%;
+  }
 }
