@@ -18,7 +18,7 @@ const Hero = () => {
           <button className={css.btnHero}>Get started</button>
         </div>
         <div className={css.rightBlock}>
-          <img src={heroPhoto} alt="" />
+          <img src={heroPhoto} alt="" className={css.imgRightBlock} />
         </div>
       </div>
 

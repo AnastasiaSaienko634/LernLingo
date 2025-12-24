@@ -1,3 +1,4 @@
+/* Container for 2 Blocks right, left */
 .container {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
   gap: 24px;
 }
 
+/* Main Container Hero */
 .heroContainer {
   display: flex;
   flex-direction: column;
@@ -15,6 +17,7 @@
   margin-right: auto;
 }
 
+/* Left Block */
 .leftBlock {
   display: flex;
   flex-direction: column;
@@ -80,10 +83,17 @@
   cursor: pointer;
   background-color: #fbe9ba;
 }
+/* Right Block */
+.imgRightBlock {
+  max-width: 310px;
+  width: 100%;
+}
 
+/* Review Block */
 .reviewBlock {
   padding-top: 24px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-bottom: 32px;
@@ -91,16 +101,22 @@
 
 .listReview {
   display: flex;
-  gap: 100px;
-  padding: 40px 110px 40px 110px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 310px;
+  padding: 20px 10px 20px 10px;
   border: 3px dashed #f4c550;
   border-radius: 30px;
 }
 
 .listItemReview {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
   gap: 16px;
 }
 
@@ -113,8 +129,8 @@
 
 .reviewDescription {
   width: 96px;
+  text-align: left;
   color: #121417b2;
-  font-family: Roboto;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -128,16 +144,17 @@
   }
 
   .heroContainer {
-    display: flex;
     flex-direction: column;
-    justify-items: center;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .leftBlock {
     max-width: 720px;
     height: 530px;
+  }
+
+  /* Right Block */
+  .imgRightBlock {
+    max-width: 720px;
   }
 
   .titleHero {
@@ -190,14 +207,13 @@
 
   .reviewBlock {
     padding-top: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-bottom: 32px;
   }
 
   .listReview {
     display: flex;
+    flex-wrap: nowrap;
+    max-width: 1110px;
     gap: 100px;
     padding: 40px 110px 40px 110px;
     border: 3px dashed #f4c550;
@@ -206,6 +222,8 @@
 
   .listItemReview {
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 16px;
@@ -213,7 +231,7 @@
 
   .reviewTitle {
     font-weight: 500;
-    font-size: 28px;
+    font-size: 27px;
     line-height: 32px;
     letter-spacing: -2%;
   }
