@@ -15,8 +15,8 @@
 
 .navigation {
   position: fixed;
-  top: 7%;
-  left: 47%;
+  top: 8%;
+  left: 50%;
   transform: translateX(-50%);
   padding: 110px 110px;
   background-color: white;
@@ -60,6 +60,7 @@
 }
 
 .humburgerIcon {
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +78,7 @@
 }
 
 .closeIcon {
+  color: black;
   width: 30px;
   height: 30px;
 }
