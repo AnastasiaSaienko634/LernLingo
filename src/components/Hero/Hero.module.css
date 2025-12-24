@@ -27,7 +27,7 @@
   border-radius: 30px;
   width: 100%;
   max-width: 430px;
-  height: 450px;
+  height: 425px;
 }
 
 .titleHero {
@@ -51,7 +51,7 @@
 
 .descriptionHero {
   margin-left: 27px;
-  padding-bottom: 24px;
+  padding-bottom: 11px;
   text-align: left;
   font-weight: 400;
   font-size: 16px;
@@ -64,7 +64,7 @@
 .btnHero {
   width: 150px;
   margin-left: 28px;
-  padding: 18px 18px 16px 18px;
+  padding: 18px 18px 16px 20px;
   text-align: center;
   color: black;
   background-color: #f4c550;
@@ -79,16 +79,17 @@
 
 .btnHero:hover {
   cursor: pointer;
-  background-color: #fbe9ba;
+  background-color: #ffdc86;
 }
 
 .btnHero:focus {
   cursor: pointer;
-  background-color: #fbe9ba;
+  background-color: #ffdc86;
 }
+
 /* Right Block */
 .imgRightBlock {
-  max-width: 330px;
+  max-width: 430px;
   width: 100%;
 }
 
@@ -108,8 +109,6 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
-  width: 100%;
-  max-width: 310px;
   padding: 20px 10px 20px 10px;
   border: 3px dashed #f4c550;
   border-radius: 30px;
@@ -140,15 +139,39 @@
   letter-spacing: -2%;
 }
 
-@media (min-width: 758px) {
+/* Tablet */
+@media (min-width: 985px) {
+  /* Blocks container */
+  .container {
+    flex-direction: row;
+  }
+
+  /* Main Hero container */
+  .heroContainer {
+    flex-direction: column;
+  }
+
+  /* Right Block */
+  .imgRightBlock {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .listReview {
+    padding: 20px 50px 20px 50px;
+    gap: 50px;
+  }
 }
 
+/* Dekstop */
 @media (min-width: 1280px) {
+  /* Blocks container */
   .container {
     display: flex;
     flex-direction: row;
   }
 
+  /* Main Hero container */
   .heroContainer {
     flex-direction: column;
   }

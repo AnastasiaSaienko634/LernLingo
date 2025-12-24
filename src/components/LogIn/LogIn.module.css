@@ -1,0 +1,145 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal */
+.modal {
+  display: flex;
+  background-color: white;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  flex-direction: column;
+}
+
+/* Login title */
+.logInTitle {
+  padding-top: 20px;
+  padding-left: 64px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -2%;
+}
+
+/* Login Description */
+.loginDescription {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 64px;
+  padding-right: 64px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  color: #121417cc;
+}
+
+/* Login Form */
+
+.logInForm {
+  padding-left: 64px;
+  padding-right: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Email Field */
+.emailField {
+  outline: none;
+  border: 1px solid #1214171a;
+  border-radius: 12px;
+  padding: 16px 16px 16px 16px;
+  font-size: 16px;
+}
+
+/* Hover, Focus, Active / Email Field  */
+.emailField:hover {
+  border: 1px solid #ffdc86;
+}
+
+.emailField:focus {
+  border: 1px solid #ffdc86;
+}
+.emailField:active {
+  border: 1px solid #ffdc86;
+}
+
+.passwordField {
+  outline: none;
+  border: 1px solid #1214171a;
+  border-radius: 12px;
+  padding: 16px 16px 16px 16px;
+  font-size: 16px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  margin-bottom: 30px;
+}
+
+/* Hover, Focus, Active / Password Field  */
+.passwordField:hover {
+  border: 1px solid #ffdc86;
+}
+
+.passwordField:focus {
+  border: 1px solid #ffdc86;
+}
+.passwordField:active {
+  border: 1px solid #ffdc86;
+}
+
+.loginSubmit {
+  cursor: pointer;
+  padding: 16px;
+  background-color: #f4c550;
+  color: black;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  margin-bottom: 64px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+/* Hover, Focus, Active / Submit Button   */
+.loginSubmit:hover {
+  background-color: #ffdc86;
+}
+
+.loginSubmit:focus {
+  background-color: #ffdc86;
+}
+
+.loginSubmit:active {
+  background-color: #ffdc86;
+}
+
+/* Close Button */
+.closeBtn {
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  background-color: white;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+}
+
+.closeIcon {
+  color: black;
+  padding-top: 25px;
+  padding-right: 25px;
+  width: 35px;
+  height: 35px;
+  transition: color 0.2s ease, color 0.2s ease;
+}
+
+.closeIcon:hover {
+  color: #ffdc86;
+}

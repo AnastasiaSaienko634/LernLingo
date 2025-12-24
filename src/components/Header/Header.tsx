@@ -4,11 +4,14 @@ import logoIcon from "../../../public/logo.svg";
 import { FiAlignJustify } from "react-icons/fi";
 import { IoIosClose } from "react-icons/io";
 import { useState } from "react";
+import LogIn from "../LogIn/LogIn";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState<boolean>();
+  const [isOpenMenu, setIsOpenMenu] = useState<boolean>();
+  const [isOpenLogIn, setIsOpenLogIn] = useState<boolean>();
 
-  const toggel = () => setIsOpen(!isOpen);
+  const toggelMenu = () => setIsOpenMenu(!isOpenMenu);
+  const toggelLogInMenu = () => setIsOpenLogIn(!isOpenLogIn);
   return (
     <>
       <nav className={css.containerDekstop}>
@@ -41,15 +44,23 @@ const Header = () => {
         {/* Авторизація */}
         <ul className={css.authorization}>
           <li>
-            <a href="" className={css.loginLink}>
+            <button
+              type="button"
+              onClick={toggelLogInMenu}
+              className={css.loginLink}
+            >
               <MdOutlineExitToApp className={css.loginIcon} />
               Log in
-            </a>
+            </button>
           </li>
           <li>
-            <a href="" className={css.registrationLink}>
+            <button
+              onClick={toggelLogInMenu}
+              type="button"
+              className={css.registrationLink}
+            >
               Registration
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
@@ -65,9 +76,9 @@ const Header = () => {
           LearnLingo
         </a>
 
-        {isOpen ? (
+        {isOpenMenu ? (
           <>
-            <button onClick={toggel} className={css.closeBtn}>
+            <button onClick={toggelMenu} className={css.closeBtn}>
               <IoIosClose className={css.closeIcon} />
             </button>
             <div className={css.navigation}>
@@ -88,27 +99,33 @@ const Header = () => {
 
                 {/* Авторизація */}
                 <ul className={css.authorization}>
-                  <li>
-                    <a href="" className={css.loginLink}>
+                  <li className={css.loginItem}>
+                    <button
+                      onClick={toggelLogInMenu}
+                      type="button"
+                      className={css.loginLink}
+                    >
                       <MdOutlineExitToApp className={css.loginIcon} />
                       Log in
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a href="" className={css.registrationLink}>
+                    <button type="button" className={css.registrationLink}>
                       Registration
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </div>
             </div>
           </>
         ) : (
-          <button onClick={toggel} className={css.humburgerBtn}>
+          <button onClick={toggelMenu} className={css.humburgerBtn}>
             <FiAlignJustify className={css.humburgerIcon} />
           </button>
         )}
       </nav>
+      {/* LoginForm Modal */}
+      <LogIn toggelLogInMenu={toggelLogInMenu} isOpenLogIn={isOpenLogIn} />
     </>
   );
 };
