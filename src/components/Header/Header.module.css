@@ -15,10 +15,11 @@
 
 .navigation {
   position: fixed;
-  top: 20%;
-  left: 45%;
+  top: 7%;
+  left: 47%;
   transform: translateX(-50%);
-
+  padding: 110px 110px;
+  background-color: white;
   width: 100%;
   max-width: 300px;
   height: 100vh;
@@ -26,6 +27,7 @@
 
 .menu {
   display: flex;
+  padding-top: 28px;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -96,6 +98,7 @@
 /* Authorization */
 
 .authorization {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;

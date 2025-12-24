@@ -71,8 +71,6 @@ const Header = () => {
               <IoIosClose className={css.closeIcon} />
             </button>
             <div className={css.navigation}>
-              {/* Логотип */}
-
               <div className={css.menu}>
                 {/* Список зі сторінками */}
                 <ul className={css.pages}>
