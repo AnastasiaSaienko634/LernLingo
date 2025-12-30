@@ -74,10 +74,25 @@ const Header = () => {
 
         {isOpenMenu ? (
           <>
-            <button onClick={toggelMenu} className={css.closeBtn}>
-              <IoIosClose className={css.closeIcon} />
-            </button>
             <div className={css.navigation}>
+              <div className={css.headerPhone}>
+                {/* Logo */}
+                <a href="" className={css.logoLinkPhone}>
+                  <img
+                    src={logoIcon}
+                    alt=""
+                    width={28}
+                    height={28}
+                    className={css.logoIcon}
+                  />
+                  LearnLingo
+                </a>
+                {/* Кнопка для закриття модалки навiгацii  */}
+                <button onClick={toggelMenu} className={css.closeBtn}>
+                  <IoIosClose className={css.closeIcon} />
+                </button>
+              </div>
+
               <div className={css.menu}>
                 {/* Список зі сторінками */}
                 <ul className={css.pages}>
