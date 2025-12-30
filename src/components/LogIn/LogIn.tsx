@@ -7,8 +7,17 @@ interface LogInProp {
   isOpenLogIn: boolean | undefined;
 }
 
+interface Formikvalue {
+  email: string;
+  password: string;
+}
+
 const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
-  const handleSubmit = (values: any, formikHelpers: FormikHelpers) => {};
+  const handleSubmit = (values: Formikvalue) => {
+    console.log(values.email);
+    console.log(values.password);
+    toggelLogInMenu();
+  };
   return (
     <>
       {isOpenLogIn && (
@@ -37,11 +46,7 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
                   name="password"
                   placeholder="Password"
                 />
-                <button
-                  onClick={toggelLogInMenu}
-                  type="submit"
-                  className={css.loginSubmit}
-                >
+                <button type="submit" className={css.loginSubmit}>
                   Log In
                 </button>
               </Form>

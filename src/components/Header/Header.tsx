@@ -54,11 +54,7 @@ const Header = () => {
             </button>
           </li>
           <li>
-            <button
-              onClick={toggelLogInMenu}
-              type="button"
-              className={css.registrationLink}
-            >
+            <button type="button" className={css.registrationLink}>
               Registration
             </button>
           </li>
