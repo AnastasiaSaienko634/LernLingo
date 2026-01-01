@@ -5,13 +5,17 @@ import { FiAlignJustify } from "react-icons/fi";
 import { IoIosClose } from "react-icons/io";
 import { useState } from "react";
 import LogIn from "../LogIn/LogIn";
+import Register from "../Register/Register";
 
 const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>();
   const [isOpenLogIn, setIsOpenLogIn] = useState<boolean>();
+  const [isOpenRegister, setIsOpenMenuRegister] = useState<boolean>();
 
   const toggelMenu = () => setIsOpenMenu(!isOpenMenu);
   const toggelLogInMenu = () => setIsOpenLogIn(!isOpenLogIn);
+  const toggelRegister = () => setIsOpenMenuRegister(!isOpenRegister);
+
   return (
     <>
       <nav className={css.containerDekstop}>
@@ -54,7 +58,11 @@ const Header = () => {
             </button>
           </li>
           <li>
-            <button type="button" className={css.registrationLink}>
+            <button
+              type="button"
+              onClick={toggelRegister}
+              className={css.registrationLink}
+            >
               Registration
             </button>
           </li>
@@ -121,7 +129,11 @@ const Header = () => {
                     </button>
                   </li>
                   <li>
-                    <button type="button" className={css.registrationLink}>
+                    <button
+                      type="button"
+                      onClick={toggelRegister}
+                      className={css.registrationLink}
+                    >
                       Registration
                     </button>
                   </li>
@@ -137,6 +149,12 @@ const Header = () => {
       </nav>
       {/* LoginForm Modal */}
       <LogIn toggelLogInMenu={toggelLogInMenu} isOpenLogIn={isOpenLogIn} />
+
+      {/* Register Modal */}
+      <Register
+        toggelRegister={toggelRegister}
+        isOpenRegister={isOpenRegister}
+      />
     </>
   );
 };
