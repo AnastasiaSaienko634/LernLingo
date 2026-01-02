@@ -17,8 +17,8 @@
   flex-direction: column;
 }
 
-/* Login title */
-.logInTitle {
+/* Register title */
+.registerTitle {
   padding-top: 20px;
   padding-left: 64px;
   font-weight: 500;
@@ -27,8 +27,8 @@
   letter-spacing: -2%;
 }
 
-/* Login Description */
-.loginDescription {
+/* Register Description */
+.registerDescription {
   padding-top: 20px;
   padding-bottom: 40px;
   padding-left: 64px;
@@ -40,18 +40,38 @@
   color: #121417cc;
 }
 
-/* Login Form */
+/* Register Form */
 
-.logInForm {
+.registerForm {
   padding-left: 64px;
   padding-right: 64px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+}
+/* Name Field */
+.nameField {
+  outline: none;
+  border: 1px solid #1214171a;
+  border-radius: 12px;
+  padding: 16px 16px 16px 16px;
+  font-size: 16px;
+}
+
+/* Hover, Focus, Active / Name Field  */
+.nameField:hover {
+  border: 1px solid #ffdc86;
+}
+
+.nameField:focus {
+  border: 1px solid #ffdc86;
+}
+.nameField:active {
+  border: 1px solid #ffdc86;
 }
 
 /* Email Field */
 .emailField {
+  margin-top: 24px;
   outline: none;
   border: 1px solid #1214171a;
   border-radius: 12px;
@@ -60,10 +80,9 @@
 }
 /* Validation */
 .schemaValidation {
-  padding: 0px;
-  margin: 0px;
-  color: red;
+  color: #c40202;
   font-size: 12px;
+  margin-top: 4px;
 }
 
 /* Hover, Focus, Active / Email Field  */
@@ -84,8 +103,7 @@
   border-radius: 12px;
   padding: 16px 16px 16px 16px;
   font-size: 16px;
-  transition: border-color 0.2s ease, color 0.2s ease;
-  margin-bottom: 30px;
+  margin-top: 24px;
 }
 
 /* Hover, Focus, Active / Password Field  */
@@ -100,7 +118,9 @@
   border: 1px solid #ffdc86;
 }
 
-.loginSubmit {
+/* Register submit button */
+.registerSubmit {
+  margin-top: 30px;
   cursor: pointer;
   padding: 16px;
   background-color: #f4c550;
@@ -115,16 +135,20 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 /* Hover, Focus, Active / Submit Button   */
-.loginSubmit:hover {
+.registerSubmit:hover {
   background-color: #ffdc86;
 }
 
-.loginSubmit:focus {
+.registerSubmit:focus {
   background-color: #ffdc86;
 }
 
-.loginSubmit:active {
+.registerSubmit:active {
   background-color: #ffdc86;
+}
+
+.registerSubmit:disabled {
+  opacity: 0.5;
 }
 
 /* Close Button */

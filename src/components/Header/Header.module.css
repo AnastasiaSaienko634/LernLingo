@@ -165,13 +165,6 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Tablet */
-@media (min-width: 800px) {
-  .navigation {
-    top: 7%;
-  }
-}
-
 /* Dekstop */
 @media (min-width: 1280px) {
   .containerPhone {
