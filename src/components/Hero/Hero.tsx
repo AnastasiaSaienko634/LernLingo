@@ -1,7 +1,12 @@
 import css from "./Hero.module.css";
 import heroPhoto from "../../../public/heroPhoto.png";
+import { useState } from "react";
+import Register from "../Register/Register";
 
 const Hero = () => {
+  const [isOpenRegister, setIsOpenLogin] = useState<boolean>();
+
+  const toggelRegister = () => setIsOpenLogin(!isOpenRegister);
   return (
     <div className={css.heroContainer}>
       <div className={css.container}>
@@ -15,7 +20,9 @@ const Hero = () => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </p>
-          <button className={css.btnHero}>Get started</button>
+          <button onClick={toggelRegister} className={css.btnHero}>
+            Get started
+          </button>
         </div>
         <div className={css.rightBlock}>
           <img src={heroPhoto} alt="" className={css.imgRightBlock} />
@@ -42,6 +49,10 @@ const Hero = () => {
           </li>
         </ul>
       </div>
+      <Register
+        isOpenRegister={isOpenRegister}
+        toggelRegister={toggelRegister}
+      />
     </div>
   );
 };

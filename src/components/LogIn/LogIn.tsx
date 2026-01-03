@@ -1,6 +1,8 @@
-import { Formik, Form, Field } from "formik";
 import css from "./LogIn.module.css";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import { IoIosClose } from "react-icons/io";
+import { useEffect } from "react";
 
 interface LogInProp {
   toggelLogInMenu: () => void;
@@ -18,10 +20,40 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
     console.log(values.password);
     toggelLogInMenu();
   };
+
+  // Validation Schema
+  const logInSchema = Yup.object().shape({
+    password: Yup.string()
+      .min(2, "Password is too Short!")
+      .max(50, "Password is too Long!")
+      .required("Password is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+  });
+
+  // Close the modal when clicking on modal overlay
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      toggelLogInMenu();
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyboardClick = (e: KeyboardEvent) => {
+      if (e.key == "Escape") {
+        toggelLogInMenu();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyboardClick);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyboardClick);
+    };
+  });
   return (
     <>
       {isOpenLogIn && (
-        <div className={css.modalOverlay}>
+        <div className={css.modalOverlay} onClick={handleOverlayClick}>
           <div className={css.modal}>
             <button onClick={toggelLogInMenu} className={css.closeBtn}>
               <IoIosClose className={css.closeIcon} />
@@ -32,24 +64,41 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
               and continue your search for an teacher.
             </p>
             <Formik
+              validationSchema={logInSchema}
               initialValues={{ email: "", password: "" }}
               onSubmit={handleSubmit}
             >
-              <Form className={css.logInForm}>
-                <Field
-                  className={css.emailField}
-                  name="email"
-                  placeholder="Email"
-                />
-                <Field
-                  className={css.passwordField}
-                  name="password"
-                  placeholder="Password"
-                />
-                <button type="submit" className={css.loginSubmit}>
-                  Log In
-                </button>
-              </Form>
+              {({ isSubmitting }) => (
+                <Form className={css.logInForm}>
+                  <Field
+                    className={css.emailField}
+                    name="email"
+                    placeholder="Email"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="span"
+                    className={css.schemaValidation}
+                  />
+                  <Field
+                    className={css.passwordField}
+                    name="password"
+                    placeholder="Password"
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="span"
+                    className={css.schemaValidation}
+                  />
+                  <button
+                    type="submit"
+                    className={css.loginSubmit}
+                    disabled={isSubmitting}
+                  >
+                    Log In
+                  </button>
+                </Form>
+              )}
             </Formik>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { IoIosClose } from "react-icons/io";
 import { useState } from "react";
 import LogIn from "../LogIn/LogIn";
 import Register from "../Register/Register";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>();
@@ -34,14 +35,14 @@ const Header = () => {
         {/* Список зі сторінками */}
         <ul className={css.pages}>
           <li>
-            <a href="" className={css.link}>
+            <Link to="/" className={css.link}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="" className={css.link}>
+            <Link to="teachers" className={css.link}>
               Teachers
-            </a>
+            </Link>
           </li>
         </ul>
 
