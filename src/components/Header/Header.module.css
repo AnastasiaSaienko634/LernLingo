@@ -110,7 +110,9 @@
 /* Links */
 .link {
   color: #121417;
-  transition: color 0.2s ease, color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* Authorization */
@@ -136,7 +138,9 @@
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0%;
-  transition: color 0.2s ease, color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    color 0.2s ease;
 }
 
 .loginItem {
@@ -162,7 +166,9 @@
   padding-left: 39px;
   padding-right: 39px;
   padding: 12px 20px 12px 20px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* Dekstop */
@@ -181,7 +187,11 @@
   }
 
   .containerDekstop {
+    max-width: 1184px;
+    width: 100%;
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: space-between;
     align-items: center;
     padding-top: 30px;
