@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Teachers from "../../pages/Teachers/Teachers";
 import SignUp from "../auth/SignUp.js";
 import SignIn from "../auth/SignIn.js";
+import AuthDetails from "../auth/AuthDetails.js";
 const App = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const App = () => {
       </Routes>
       <SignUp />
       <SignIn />
+      <AuthDetails />
     </>
   );
 };
