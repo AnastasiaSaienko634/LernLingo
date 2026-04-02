@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { auth } from "../../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
+// AuthDetails
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
   useEffect(() => {
@@ -18,6 +19,7 @@ const AuthDetails = () => {
     };
   }, []);
 
+  // Logout
   const handleClick = () => {
     signOut(auth)
       .then(() => console.log("Success"))
