@@ -14,6 +14,7 @@ interface Formikvalue {
   password: string;
 }
 
+// LogIn Form
 const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
   const handleSubmit = (values: Formikvalue) => {
     console.log(values.email);
@@ -30,7 +31,6 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
     email: Yup.string().email("Invalid email").required("Email is required"),
   });
 
-  // Close the modal when clicking on modal overlay
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       toggelLogInMenu();

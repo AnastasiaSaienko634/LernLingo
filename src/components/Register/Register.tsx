@@ -33,14 +33,12 @@ const Register = ({ isOpenRegister, toggelRegister }: RegisterProp) => {
     toggelRegister();
   };
 
-  // Close the modal when clicking on the modal overlay
   const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
       toggelRegister();
     }
   };
 
-  // Close the modal when pushing Escape
   useEffect(() => {
     const handleKeyboardClick = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
