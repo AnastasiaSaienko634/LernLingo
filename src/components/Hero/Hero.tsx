@@ -1,7 +1,7 @@
 import css from "./Hero.module.css";
 import heroPhoto from "../../../public/heroPhoto.png";
 import { useState } from "react";
-import Register from "../Register/Register";
+import Register from "../auth/Register/Register";
 
 const Hero = () => {
   const [isOpenRegister, setIsOpenLogin] = useState<boolean>();

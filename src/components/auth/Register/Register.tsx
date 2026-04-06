@@ -1,8 +1,11 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import css from "./Register.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import * as Yup from "yup";
+import { auth } from "../../../firebase";
+import toast from "react-hot-toast";
 
 interface RegisterProp {
   toggelRegister: () => void;
@@ -10,28 +13,25 @@ interface RegisterProp {
 }
 
 interface Formikvalue {
-  name: string;
   email: string;
   password: string;
+  copyPassword: string;
 }
 const Register = ({ isOpenRegister, toggelRegister }: RegisterProp) => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
   const SignupSchema = Yup.object().shape({
-    name: Yup.string()
-      .min(2, "Name is too Short!")
-      .max(50, "Name is too Long!")
-      .required("Name is required"),
     password: Yup.string()
+      .min(2, "Password is too Short!")
+      .max(50, "Password is too Long!")
+      .required("Password is required"),
+    copyPassword: Yup.string()
       .min(2, "Password is too Short!")
       .max(50, "Password is too Long!")
       .required("Password is required"),
     email: Yup.string().email("Invalid email").required("Email is required"),
   });
-
-  const handleSubmit = (values: Formikvalue) => {
-    console.log(values.email);
-    console.log(values.password);
-    toggelRegister();
-  };
 
   const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
@@ -51,6 +51,26 @@ const Register = ({ isOpenRegister, toggelRegister }: RegisterProp) => {
       document.removeEventListener("keydown", handleKeyboardClick);
     };
   }, [toggelRegister]);
+
+  const handleSubmit = async (values: Formikvalue) => {
+    const { email, password, copyPassword } = values;
+
+    if (copyPassword !== password) {
+      setError("Passwords didn't match!");
+      return;
+    }
+
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(user);
+      setEmail(email);
+      setError("");
+      toggelRegister();
+    } catch (err) {
+      toast.error("Something went wrong...");
+      console.log(err);
+    }
+  };
   return (
     <>
       {isOpenRegister && (
@@ -67,21 +87,11 @@ const Register = ({ isOpenRegister, toggelRegister }: RegisterProp) => {
             </p>
             <Formik
               validationSchema={SignupSchema}
-              initialValues={{ name: "", email: "", password: "" }}
+              initialValues={{ email: "", password: "", copyPassword: "" }}
               onSubmit={handleSubmit}
             >
               {({ isSubmitting }) => (
                 <Form className={css.registerForm}>
-                  <Field
-                    className={css.nameField}
-                    name="name"
-                    placeholder="Name"
-                  />
-                  <ErrorMessage
-                    name="name"
-                    component="span"
-                    className={css.schemaValidation}
-                  />
                   <Field
                     className={css.emailField}
                     name="email"
@@ -100,6 +110,17 @@ const Register = ({ isOpenRegister, toggelRegister }: RegisterProp) => {
                   />
                   <ErrorMessage
                     name="password"
+                    component="span"
+                    className={css.schemaValidation}
+                  />
+                  <Field
+                    className={css.passwordField}
+                    type="password"
+                    name="copyPassword"
+                    placeholder="Repeat Password"
+                  />
+                  <ErrorMessage
+                    name="copyPassword"
                     component="span"
                     className={css.schemaValidation}
                   />

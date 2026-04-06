@@ -1,9 +1,8 @@
 import Home from "../../pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import Teachers from "../../pages/Teachers/Teachers";
-import SignUp from "../auth/SignUp.js";
-import SignIn from "../auth/SignIn.js";
-import AuthDetails from "../auth/AuthDetails.js";
+import { Toaster } from "react-hot-toast";
+
 const App = () => {
   return (
     <>
@@ -12,9 +11,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/teachers" element={<Teachers />} />
       </Routes>
-      <SignUp />
-      <SignIn />
-      <AuthDetails />
+      {/* Toaster */}
+      <Toaster />
     </>
   );
 };

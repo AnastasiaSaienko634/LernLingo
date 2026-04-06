@@ -4,8 +4,9 @@ import logoIcon from "../../../public/logo.svg";
 import { FiAlignJustify } from "react-icons/fi";
 import { IoIosClose } from "react-icons/io";
 import { useState } from "react";
-import LogIn from "../LogIn/LogIn";
-import Register from "../Register/Register";
+import LogIn from "../../components/auth/LogIn/LogIn";
+import Register from "../../components/auth/Register/Register";
+import AuthDetails from "../auth/AuthDetails";
 import { Link } from "react-router-dom";
 
 const Header = () => {
