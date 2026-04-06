@@ -1,7 +1,8 @@
-import Home from "../../pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
-import Teachers from "../../pages/Teachers/Teachers";
 import { Toaster } from "react-hot-toast";
+// Pages
+import Teachers from "../../pages/Teachers/Teachers";
+import Home from "../../pages/Home/Home";
 
 const App = () => {
   return (

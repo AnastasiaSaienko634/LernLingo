@@ -19,8 +19,10 @@ interface FormikValue {
 
 // LogIn Form
 const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
+  // User Information + Error
   const [, setEmail] = useState("");
   const [, setError] = useState("");
+
   // Validation Schema
   const logInSchema = Yup.object().shape({
     password: Yup.string()
@@ -30,12 +32,14 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
     email: Yup.string().email("Invalid email").required("Email is required"),
   });
 
+  // Modal Window close per Overlay click
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       toggelLogInMenu();
     }
   };
 
+  // Modal Window close per Keyboard
   useEffect(() => {
     const handleKeyboardClick = (e: KeyboardEvent) => {
       if (e.key == "Escape") {
@@ -50,6 +54,7 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
     };
   }, [toggelLogInMenu]);
 
+  // Submit Form
   const handleSubmit = async (values: FormikValue) => {
     const { email, password } = values;
 
