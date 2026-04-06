@@ -2,26 +2,25 @@ import css from "./LogIn.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { IoIosClose } from "react-icons/io";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../firebase";
+import toast from "react-hot-toast";
 
 interface LogInProp {
   toggelLogInMenu: () => void;
   isOpenLogIn: boolean | undefined;
 }
 
-interface Formikvalue {
+interface FormikValue {
   email: string;
   password: string;
 }
 
 // LogIn Form
 const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
-  const handleSubmit = (values: Formikvalue) => {
-    console.log(values.email);
-    console.log(values.password);
-    toggelLogInMenu();
-  };
-
+  const [, setEmail] = useState("");
+  const [, setError] = useState("");
   // Validation Schema
   const logInSchema = Yup.object().shape({
     password: Yup.string()
@@ -49,7 +48,20 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
     return () => {
       document.removeEventListener("keydown", handleKeyboardClick);
     };
-  });
+  }, [toggelLogInMenu]);
+
+  const handleSubmit = async (values: FormikValue) => {
+    const { email, password } = values;
+
+    try {
+      const user = await signInWithEmailAndPassword(auth, email, password);
+      console.log(user);
+      toggelLogInMenu();
+    } catch (error) {
+      console.log(error);
+      toast.error("Oh Sorry...something went wrong!");
+    }
+  };
   return (
     <>
       {isOpenLogIn && (
@@ -73,6 +85,7 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
                   <Field
                     className={css.emailField}
                     name="email"
+                    type="email"
                     placeholder="Email"
                   />
                   <ErrorMessage
@@ -83,6 +96,7 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
                   <Field
                     className={css.passwordField}
                     name="password"
+                    type="password"
                     placeholder="Password"
                   />
                   <ErrorMessage
@@ -95,7 +109,7 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
                     className={css.loginSubmit}
                     disabled={isSubmitting}
                   >
-                    Log In
+                    {isSubmitting ? <p>Loading....</p> : <p> Log In</p>}
                   </button>
                 </Form>
               )}

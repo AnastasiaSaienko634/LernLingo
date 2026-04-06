@@ -18,8 +18,8 @@ interface Formikvalue {
   copyPassword: string;
 }
 const Register = ({ isOpenRegister, toggelRegister }: RegisterProp) => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [, setEmail] = useState("");
+  const [, setError] = useState("");
 
   const SignupSchema = Yup.object().shape({
     password: Yup.string()
@@ -52,6 +52,7 @@ const Register = ({ isOpenRegister, toggelRegister }: RegisterProp) => {
     };
   }, [toggelRegister]);
 
+  // Submit Form
   const handleSubmit = async (values: Formikvalue) => {
     const { email, password, copyPassword } = values;
 
