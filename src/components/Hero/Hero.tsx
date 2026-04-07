@@ -1,10 +1,27 @@
 import css from "./Hero.module.css";
 import heroPhoto from "../../../public/heroPhoto.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Register from "../auth/Register/Register";
+import { onAuthStateChanged, type User } from "firebase/auth";
+import { auth } from "../../firebase";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [isOpenRegister, setIsOpenLogin] = useState<boolean>();
+
+  const [authUser, setAuthUser] = useState<User | null>(null);
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
+    return () => {
+      listen();
+    };
+  }, []);
 
   const toggelRegister = () => setIsOpenLogin(!isOpenRegister);
   return (
@@ -20,9 +37,15 @@ const Hero = () => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </p>
-          <button onClick={toggelRegister} className={css.btnHero}>
-            Get started
-          </button>
+          {!authUser ? (
+            <button onClick={toggelRegister} className={css.btnHero}>
+              Get started
+            </button>
+          ) : (
+            <Link to="/teachers" className={css.linkTeachers}>
+              Teachers
+            </Link>
+          )}
         </div>
         <div className={css.rightBlock}>
           <img src={heroPhoto} alt="" className={css.imgRightBlock} />

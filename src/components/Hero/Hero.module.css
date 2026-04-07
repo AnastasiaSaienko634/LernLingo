@@ -241,6 +241,35 @@
     background-color: #fbe9ba;
   }
 
+  .linkTeachers {
+    display: flex;
+    justify-content: center;
+    width: 267px;
+    margin-left: 68px;
+    padding: 16px 1px 16px 0px;
+    color: black;
+    background-color: #f4c550;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: 700;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .linkTeachers:hover {
+    cursor: pointer;
+    background-color: #fbe9ba;
+  }
+
+  .linkTeachers:focus {
+    cursor: pointer;
+    background-color: #fbe9ba;
+  }
+
   .reviewBlock {
     padding-top: 24px;
     padding-bottom: 32px;
