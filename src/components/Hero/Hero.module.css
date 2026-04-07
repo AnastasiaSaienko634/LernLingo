@@ -29,6 +29,7 @@
   height: 425px;
 }
 
+/* Hero Title */
 .titleHero {
   padding-top: 28px;
   padding-bottom: 10px;
@@ -41,6 +42,7 @@
   width: 250px;
 }
 
+/* Span Text */
 .markerText {
   background-color: #fbe9ba;
   border-radius: 10px;
@@ -48,6 +50,7 @@
   font-style: italic;
 }
 
+/* Hero Descriptions */
 .descriptionHero {
   margin-left: 27px;
   padding-bottom: 11px;
@@ -60,6 +63,7 @@
   width: 260px;
 }
 
+/* Hero Button */
 .btnHero {
   width: 150px;
   margin-left: 28px;

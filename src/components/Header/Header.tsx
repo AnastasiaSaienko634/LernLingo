@@ -3,11 +3,14 @@ import { MdOutlineExitToApp } from "react-icons/md";
 import logoIcon from "../../../public/logo.svg";
 import { FiAlignJustify } from "react-icons/fi";
 import { IoIosClose } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LogIn from "../../components/auth/LogIn/LogIn";
 import Register from "../../components/auth/Register/Register";
-import AuthDetails from "../auth/AuthDetails";
+// import AuthDetails from "../auth/AuthDetails";
 import { Link } from "react-router-dom";
+import AuthDetails from "../auth/AuthDetails";
+import { onAuthStateChanged, type User } from "firebase/auth";
+import { auth } from "../../firebase";
 
 const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>();
@@ -17,6 +20,20 @@ const Header = () => {
   const toggelMenu = () => setIsOpenMenu(!isOpenMenu);
   const toggelLogInMenu = () => setIsOpenLogIn(!isOpenLogIn);
   const toggelRegister = () => setIsOpenMenuRegister(!isOpenRegister);
+
+  const [authUser, setAuthUser] = useState<User | null>(null);
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
+    return () => {
+      listen();
+    };
+  }, []);
 
   return (
     <>
@@ -48,27 +65,31 @@ const Header = () => {
         </ul>
 
         {/* Авторизація */}
-        <ul className={css.authorization}>
-          <li>
-            <button
-              type="button"
-              onClick={toggelLogInMenu}
-              className={css.loginLink}
-            >
-              <MdOutlineExitToApp className={css.loginIcon} />
-              Log in
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              onClick={toggelRegister}
-              className={css.registrationLink}
-            >
-              Registration
-            </button>
-          </li>
-        </ul>
+        {authUser ? (
+          <AuthDetails />
+        ) : (
+          <ul className={css.authorization}>
+            <li>
+              <button
+                type="button"
+                onClick={toggelLogInMenu}
+                className={css.loginLink}
+              >
+                <MdOutlineExitToApp className={css.loginIcon} />
+                Log in
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={toggelRegister}
+                className={css.registrationLink}
+              >
+                Registration
+              </button>
+            </li>
+          </ul>
+        )}
       </nav>
       <nav className={css.containerPhone}>
         <a href="" className={css.logoLink}>
@@ -119,27 +140,31 @@ const Header = () => {
                 </ul>
 
                 {/* Авторизація */}
-                <ul className={css.authorization}>
-                  <li className={css.loginItem}>
-                    <button
-                      onClick={toggelLogInMenu}
-                      type="button"
-                      className={css.loginLink}
-                    >
-                      <MdOutlineExitToApp className={css.loginIcon} />
-                      Log in
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      type="button"
-                      onClick={toggelRegister}
-                      className={css.registrationLink}
-                    >
-                      Registration
-                    </button>
-                  </li>
-                </ul>
+                {authUser ? (
+                  <AuthDetails />
+                ) : (
+                  <ul className={css.authorization}>
+                    <li>
+                      <button
+                        type="button"
+                        onClick={toggelLogInMenu}
+                        className={css.loginLink}
+                      >
+                        <MdOutlineExitToApp className={css.loginIcon} />
+                        Log in
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        onClick={toggelRegister}
+                        className={css.registrationLink}
+                      >
+                        Registration
+                      </button>
+                    </li>
+                  </ul>
+                )}
               </div>
             </div>
           </>

@@ -1,0 +1,41 @@
+/* LogOut Container */
+.logOutConatiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LogOut Button */
+.logOutButton {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  text-align: center;
+  color: black;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 20px 12px 20px;
+  transition: all 0.2s ease;
+}
+
+.logOutButton:hover {
+  cursor: pointer;
+  color: #ffdc86;
+}
+
+.logOutButton:focus {
+  cursor: pointer;
+  color: #ffdc86;
+}
+
+/* Icon Exit */
+.iconLogOut {
+  width: 20px;
+  height: 20px;
+}

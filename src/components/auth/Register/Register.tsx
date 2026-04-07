@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import css from "./Register.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import * as Yup from "yup";
 import { auth } from "../../../firebase";
@@ -39,19 +39,6 @@ const Register = ({ isOpenRegister, toggelRegister }: RegisterProp) => {
     }
   };
 
-  useEffect(() => {
-    const handleKeyboardClick = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        toggelRegister();
-      }
-    };
-    document.addEventListener("keydown", handleKeyboardClick);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyboardClick);
-    };
-  }, [toggelRegister]);
-
   // Submit Form
   const handleSubmit = async (values: Formikvalue) => {
     const { email, password, copyPassword } = values;
@@ -63,7 +50,10 @@ const Register = ({ isOpenRegister, toggelRegister }: RegisterProp) => {
 
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(user);
+      if (!user) {
+        return;
+      }
+      toast.success("🎉 Welcome to LearnLingo!");
       setEmail(email);
       setError("");
       toggelRegister();

@@ -1,15 +1,20 @@
+import css from "./AuthDetails.module.css";
 import React, { useState } from "react";
 import { useEffect } from "react";
+// firebase
 import { auth } from "../../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import type { User } from "firebase/auth";
+// Icon
+import { MdOutlineExitToApp } from "react-icons/md";
 
 // AuthDetails
 const AuthDetails = () => {
-  const [authUser, setAuthUser] = useState(null);
+  const [authUser, setAuthUser] = useState<User | null>(null);
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setAuthUser(authUser);
+        setAuthUser(user);
       } else {
         setAuthUser(null);
       }
@@ -29,13 +34,12 @@ const AuthDetails = () => {
   };
   return (
     <div>
-      {authUser ? (
-        <div>
-          <p>Sigined as {authUser.email}</p>
-          <button onClick={handleClick}>Logout</button>
+      {authUser && (
+        <div className={css.logOutConatiner}>
+          <button onClick={handleClick} className={css.logOutButton}>
+            <MdOutlineExitToApp className={css.iconLogOut} /> Logout
+          </button>
         </div>
-      ) : (
-        <p>Signed Out</p>
       )}
     </div>
   );

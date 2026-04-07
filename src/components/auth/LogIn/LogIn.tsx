@@ -2,10 +2,10 @@ import css from "./LogIn.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { IoIosClose } from "react-icons/io";
-import { useEffect, useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 interface LogInProp {
   toggelLogInMenu: () => void;
@@ -21,7 +21,6 @@ interface FormikValue {
 const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
   // User Information + Error
   const [, setEmail] = useState("");
-  const [, setError] = useState("");
 
   // Validation Schema
   const logInSchema = Yup.object().shape({
@@ -39,31 +38,19 @@ const LogIn = ({ toggelLogInMenu, isOpenLogIn }: LogInProp) => {
     }
   };
 
-  // Modal Window close per Keyboard
-  useEffect(() => {
-    const handleKeyboardClick = (e: KeyboardEvent) => {
-      if (e.key == "Escape") {
-        toggelLogInMenu();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyboardClick);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyboardClick);
-    };
-  }, [toggelLogInMenu]);
-
   // Submit Form
   const handleSubmit = async (values: FormikValue) => {
     const { email, password } = values;
 
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
-      console.log(user);
+      if (!user) {
+        return;
+      }
+      toast.success(`Hello ${email}`);
+      setEmail(email);
       toggelLogInMenu();
-    } catch (error) {
-      console.log(error);
+    } catch {
       toast.error("Oh Sorry...something went wrong!");
     }
   };
