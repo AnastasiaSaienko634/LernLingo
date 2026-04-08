@@ -1,8 +1,10 @@
-import React from "react";
-import Header from "../../components/Header/Header";
 import { getDatabase, ref, get } from "firebase/database";
+import TeacherList from "../../components/TeacherList/TeacherList";
+import css from "./Teachers.module.css";
+import { useState } from "react";
 
 const Teachers = () => {
+  const [teaches, setTeachers] = useState([]);
   // Connect to Database
   const db = getDatabase();
 
@@ -11,7 +13,7 @@ const Teachers = () => {
     const snapshot = await get(ref(db, "/"));
 
     if (snapshot.exists()) {
-      console.log(snapshot.val());
+      setTeachers(snapshot.val());
     } else {
       console.log("No data");
     }
@@ -20,9 +22,9 @@ const Teachers = () => {
   getAllData();
 
   return (
-    <>
-      <Header />
-    </>
+    <div className={css.container}>
+      <TeacherList teachers={teaches} />
+    </div>
   );
 };
 
