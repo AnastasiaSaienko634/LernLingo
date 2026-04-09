@@ -191,6 +191,7 @@
     max-width: 720px;
   }
 
+  /* Title Hero */
   .titleHero {
     padding-top: 98px;
     padding-bottom: 32px;
@@ -200,6 +201,7 @@
     width: 550px;
   }
 
+  /* Span Text */
   .markerText {
     background-color: #fbe9ba;
     border-radius: 10px;
@@ -207,6 +209,7 @@
     font-style: italic;
   }
 
+  /* Description Hero */
   .descriptionHero {
     margin-left: 68px;
     padding-bottom: 64px;
@@ -215,6 +218,7 @@
     width: 471px;
   }
 
+  /* Button Hero */
   .btnHero {
     width: 267px;
     margin-left: 68px;
@@ -231,6 +235,7 @@
       color 0.2s ease;
   }
 
+  /* Button | Hover | Focus */
   .btnHero:hover {
     cursor: pointer;
     background-color: #fbe9ba;
@@ -241,6 +246,7 @@
     background-color: #fbe9ba;
   }
 
+  /* Teachers Link */
   .linkTeachers {
     display: flex;
     justify-content: center;
@@ -260,6 +266,7 @@
       color 0.2s ease;
   }
 
+  /* Teachers Link | Hover | Focus */
   .linkTeachers:hover {
     cursor: pointer;
     background-color: #fbe9ba;
@@ -270,11 +277,13 @@
     background-color: #fbe9ba;
   }
 
+  /* Review Block */
   .reviewBlock {
     padding-top: 24px;
     padding-bottom: 32px;
   }
 
+  /* List Review */
   .listReview {
     display: flex;
     flex-wrap: nowrap;
@@ -285,6 +294,7 @@
     border-radius: 30px;
   }
 
+  /* List Item Review */
   .listItemReview {
     display: flex;
     flex-wrap: nowrap;
@@ -294,6 +304,7 @@
     gap: 16px;
   }
 
+  /* Title Review */
   .reviewTitle {
     font-weight: 500;
     font-size: 27px;
@@ -301,6 +312,7 @@
     letter-spacing: -2%;
   }
 
+  /* Description Review */
   .reviewDescription {
     width: 96px;
     color: #121417b2;
