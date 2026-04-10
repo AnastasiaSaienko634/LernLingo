@@ -23,6 +23,14 @@ type Props = {
 const TeacherItem = ({ teacher }: Props) => {
   return (
     <div className={css.teacherContainer}>
+      <div className={css.teacherPhotoContainer}>
+        <img
+          className={css.teacherPhoto}
+          src={teacher.avatar_url}
+          alt="photo"
+        />
+      </div>
+
       <div className={css.headerContainer}>
         <h3 className={css.languagesTitle}>Languages</h3>
         <ul className={css.teacherInfo}>
