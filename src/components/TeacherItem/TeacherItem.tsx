@@ -23,32 +23,40 @@ type Props = {
 const TeacherItem = ({ teacher }: Props) => {
   return (
     <div className={css.teacherContainer}>
-      <div className={css.teacherPhotoContainer}>
-        <img
-          className={css.teacherPhoto}
-          src={teacher.avatar_url}
-          alt="photo"
-        />
-      </div>
+      <div className={css.cardContent}>
+        <div className={css.teacherPhotoContainer}>
+          <img
+            className={css.teacherPhoto}
+            src={teacher.avatar_url}
+            alt="photo"
+          />
+        </div>
 
-      <div className={css.headerContainer}>
-        <h3 className={css.languagesTitle}>Languages</h3>
-        <ul className={css.teacherInfo}>
-          <li>
-            <p>Lessons online</p>
-          </li>
-          <li>
-            <p>Lessons done: {teacher.lessons_done}</p>
-          </li>
-          <li>
-            <p>Rating: {teacher.rating} </p>
-          </li>
-          <li>
-            <p>Price / 1 hour: {teacher.price_per_hour}$</p>
-          </li>
-        </ul>
+        <div className={css.infoContainer}>
+          <div className={css.headerContainer}>
+            <p className={css.languagesTitle}>Languages</p>
+
+            <ul className={css.teacherInfo}>
+              <li>Lessons online</li>
+              <li>Lessons done: {teacher.lessons_done}</li>
+              <li>Rating: {teacher.rating}</li>
+              <li>Price / 1 hour: {teacher.price_per_hour}$</li>
+            </ul>
+          </div>
+
+          <h2 className={css.teacherName}>
+            {teacher.name} {teacher.surname}
+          </h2>
+
+          <p className={css.languages}>
+            Speaks: {teacher.languages.join(", ")}
+          </p>
+
+          <p className={css.lessonInfo}>{teacher.lesson_info}</p>
+
+          <p className={css.conditions}>{teacher.conditions}</p>
+        </div>
       </div>
-      <h2 className={css.teacherName}>{teacher.name}</h2>
     </div>
   );
 };
