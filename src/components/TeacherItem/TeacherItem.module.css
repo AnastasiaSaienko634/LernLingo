@@ -184,3 +184,48 @@
   vertical-align: middle;
   color: black;
 }
+
+.readMoreBtn {
+  display: flex;
+  width: 78px;
+  background-color: white;
+  border: none;
+
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  text-decoration: underline;
+  text-decoration-style: solid;
+
+  padding-top: 16px;
+}
+
+/* Language Levl List */
+.languageLevelsList {
+  display: flex;
+  gap: 8px;
+  padding-top: 32px;
+}
+
+/* Language Levl List Item */
+.languageLevlItem {
+  padding: 8px 12px 8px 12px;
+
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+
+  border: 1px solid #12141733;
+  border-radius: 35px;
+}
+
+.languageLevlItem:first-child {
+  background-color: #f4c550;
+  border-color: #f4c550;
+}

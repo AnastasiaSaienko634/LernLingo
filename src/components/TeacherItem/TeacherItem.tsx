@@ -89,6 +89,16 @@ const TeacherItem = ({ teacher }: Props) => {
               {teacher.conditions}
             </span>
           </p>
+
+          <button className={css.readMoreBtn}>Read more</button>
+
+          <ul className={css.languageLevelsList}>
+            {teacher.levels.map((levl) => (
+              <li className={css.languageLevlItem} key={levl}>
+                #{levl}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
