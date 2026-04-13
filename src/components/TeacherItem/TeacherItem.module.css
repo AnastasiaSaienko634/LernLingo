@@ -6,11 +6,13 @@
   padding: 24px;
 }
 
+/* Card Content */
 .cardContent {
   display: flex;
   gap: 24px;
 }
 
+/* Photo Container */
 .teacherPhotoContainer {
   min-width: 96px;
   height: 96px;
@@ -20,6 +22,7 @@
   overflow: hidden;
 }
 
+/* Photo */
 .teacherPhoto {
   width: 100%;
   height: 100%;
@@ -27,6 +30,7 @@
   object-fit: cover;
 }
 
+/* Info Container */
 .infoContainer {
   flex: 1;
   display: flex;
@@ -34,42 +38,149 @@
   gap: 8px;
 }
 
+/* Header Container */
 .headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Teacher Info */
 .teacherInfo {
   display: flex;
-  gap: 16px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  font-weight: 500;
+  gap: 32px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
 
-  font-size: 14px;
-  color: #555;
+  color: #121417;
 }
 
+.teacherInfoItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon Book */
+.iconBook {
+  width: 16px;
+  height: 16px;
+}
+
+/* Icon Star */
+.starIcon {
+  color: #ffc531;
+}
+
+/* Lesson Price */
+.lessonPrice {
+  color: #38cd3e;
+}
+
+/* Teacher Favorite Icon */
+.teacherFavoriteIcon {
+  height: 30px;
+  width: 30px;
+}
+
+/* Title Languages */
 .languagesTitle {
   color: #8a8a89;
   font-size: 14px;
 }
 
+/* Teacher Name */
 .teacherName {
-  font-size: 20px;
-  font-weight: 600;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  padding-bottom: 32px;
 }
 
+/* Languages */
 .languages {
-  color: #333;
+  color: #8a8a89;
+  display: flex;
+  gap: 4px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
 }
 
+.markerLanguage {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  text-decoration: underline;
+  color: black;
+}
+
+/* Lessons Info */
 .lessonInfo {
-  color: #555;
+  color: #8a8a89;
+  display: flex;
+  gap: 4px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
 }
 
+.lessonsInfoDescription {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: black;
+}
+
+/* Conditions */
 .conditions {
-  color: #777;
-  font-size: 14px;
+  color: #8a8a89;
+  display: flex;
+  gap: 4px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+}
+
+.conditionsDescription {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: black;
 }

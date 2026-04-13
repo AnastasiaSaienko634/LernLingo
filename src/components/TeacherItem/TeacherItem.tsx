@@ -1,4 +1,8 @@
 import css from "./TeacherItem.module.css";
+// icons
+import { FiBookOpen } from "react-icons/fi";
+import { GiRoundStar } from "react-icons/gi";
+import { CiHeart } from "react-icons/ci";
 
 type Teacher = {
   id: number;
@@ -37,10 +41,26 @@ const TeacherItem = ({ teacher }: Props) => {
             <p className={css.languagesTitle}>Languages</p>
 
             <ul className={css.teacherInfo}>
-              <li>Lessons online</li>
-              <li>Lessons done: {teacher.lessons_done}</li>
-              <li>Rating: {teacher.rating}</li>
-              <li>Price / 1 hour: {teacher.price_per_hour}$</li>
+              <li className={css.teacherInfoItem}>
+                <FiBookOpen className={css.iconBook} />
+                Lessons online
+              </li>
+              <li className={css.teacherInfoItem}>
+                Lessons done: {teacher.lessons_done}
+              </li>
+              <li className={css.teacherInfoItem}>
+                <GiRoundStar className={css.starIcon} />
+                Rating: {teacher.rating}
+              </li>
+              <li className={css.teacherInfoItem}>
+                Price / 1 hour:{" "}
+                <span className={css.lessonPrice}>
+                  {teacher.price_per_hour}$
+                </span>
+              </li>
+              <li className={css.teacherInfoItem}>
+                <CiHeart className={css.teacherFavoriteIcon} />
+              </li>
             </ul>
           </div>
 
@@ -49,12 +69,26 @@ const TeacherItem = ({ teacher }: Props) => {
           </h2>
 
           <p className={css.languages}>
-            Speaks: {teacher.languages.join(", ")}
+            Speaks:
+            <span className={css.markerLanguage}>
+              {" "}
+              {teacher.languages.join(", ")}
+            </span>
           </p>
 
-          <p className={css.lessonInfo}>{teacher.lesson_info}</p>
+          <p className={css.lessonInfo}>
+            Lesson Info:
+            <span className={css.lessonsInfoDescription}>
+              {teacher.lesson_info}
+            </span>
+          </p>
 
-          <p className={css.conditions}>{teacher.conditions}</p>
+          <p className={css.conditions}>
+            Conditions:
+            <span className={css.conditionsDescription}>
+              {teacher.conditions}
+            </span>
+          </p>
         </div>
       </div>
     </div>
