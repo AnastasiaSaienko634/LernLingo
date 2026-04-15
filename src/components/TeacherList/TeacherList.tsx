@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TeacherItem from "../TeacherItem/TeacherItem";
 import css from "./TeacherList.module.css";
 
@@ -22,17 +23,27 @@ type Props = {
 };
 
 const TeacherList = ({ teachers }: Props) => {
+  const [visibleCount, setVisibleCount] = useState(4);
+  const visibleCampers = teachers.slice(0, visibleCount);
   return (
-    <div>
-      {teachers ? (
+    <div className={css.teacherListContainer}>
+      {visibleCampers ? (
         <>
           <ul className={css.teacherList}>
-            {teachers.map((teacher) => (
+            {visibleCampers.map((teacher) => (
               <li key={teacher.id}>
                 <TeacherItem teacher={teacher} />
               </li>
             ))}
           </ul>
+          {visibleCount < teachers.length && (
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 4)}
+              className={css.loadMoreBtn}
+            >
+              Load More
+            </button>
+          )}
         </>
       ) : (
         <></>

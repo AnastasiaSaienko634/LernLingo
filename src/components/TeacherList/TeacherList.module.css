@@ -1,3 +1,8 @@
+/* Teacher List Container */
+.teacherListContainer {
+  padding-bottom: 96px;
+}
+
 /* Teacher List */
 .teacherList {
   display: flex;
@@ -6,4 +11,36 @@
   justify-content: center;
   align-items: center;
   margin-top: 32px;
+}
+
+/* Load More Button */
+.loadMoreBtn {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 64px;
+  background-color: #f4c550;
+  padding: 16px 48px 16px 48px;
+  border: 1px solid #f4c550;
+  border-radius: 12px;
+
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: #121417;
+  cursor: pointer;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Load More Button | Hover | Focus */
+.loadMoreBtn:hover {
+  background-color: #ffdc86;
+  border-color: #ffdc86;
+}
+
+.loadMoreBtn:focus {
+  background-color: #ffdc86;
+  border-color: #ffdc86;
 }
