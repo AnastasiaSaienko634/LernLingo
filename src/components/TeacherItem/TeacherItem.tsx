@@ -3,6 +3,13 @@ import css from "./TeacherItem.module.css";
 import { FiBookOpen } from "react-icons/fi";
 import { GiRoundStar } from "react-icons/gi";
 import { CiHeart } from "react-icons/ci";
+import { useState } from "react";
+
+type Review = {
+  reviewer_name: string;
+  reviewer_rating: number;
+  comment: string;
+};
 
 type Teacher = {
   id: number;
@@ -16,7 +23,7 @@ type Teacher = {
   name: string;
   price_per_hour: number;
   rating: number;
-  reviews: number;
+  reviews: Review[];
   surname: string;
 };
 
@@ -25,6 +32,7 @@ type Props = {
 };
 
 const TeacherItem = ({ teacher }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={css.teacherContainer}>
       <div className={css.cardContent}>
@@ -90,7 +98,30 @@ const TeacherItem = ({ teacher }: Props) => {
             </span>
           </p>
 
-          <button className={css.readMoreBtn}>Read more</button>
+          <button
+            className={css.readMoreBtn}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? "Hide" : "Read More"}
+          </button>
+
+          {isOpen && (
+            <div className={css.reiewsBlockContainer}>
+              {teacher.reviews.map((review) => (
+                <div
+                  key={review.reviewer_name}
+                  className={css.reviewerContainer}
+                >
+                  <p className={css.reviewerName}>{review.reviewer_name}</p>
+                  <p className={css.reviewerRating}>
+                    <GiRoundStar className={css.starIcon} />
+                    {review.reviewer_rating}
+                  </p>
+                  <p className={css.reviewerComment}>{review.comment}</p>
+                </div>
+              ))}
+            </div>
+          )}
 
           <ul className={css.languageLevelsList}>
             {teacher.levels.map((levl) => (

@@ -1,6 +1,11 @@
 import { useState } from "react";
 import TeacherItem from "../TeacherItem/TeacherItem";
 import css from "./TeacherList.module.css";
+type Review = {
+  reviewer_name: string;
+  reviewer_rating: number;
+  comment: string;
+};
 
 type Teacher = {
   id: number;
@@ -14,7 +19,7 @@ type Teacher = {
   name: string;
   price_per_hour: number;
   rating: number;
-  reviews: number;
+  reviews: Review[];
   surname: string;
 };
 
