@@ -2,6 +2,7 @@ import { getDatabase, ref, get } from "firebase/database";
 import TeacherList from "../../components/TeacherList/TeacherList";
 import css from "./Teachers.module.css";
 import { useState } from "react";
+import Filters from "../../components/Filtes/Filters";
 
 const Teachers = () => {
   const [teaches, setTeachers] = useState([]);
@@ -23,6 +24,7 @@ const Teachers = () => {
 
   return (
     <div className={css.container}>
+      <Filters />
       <TeacherList teachers={teaches} />
     </div>
   );
