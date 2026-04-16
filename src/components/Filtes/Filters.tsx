@@ -3,7 +3,7 @@ import css from "./Filters.module.css";
 const Filters = () => {
   return (
     <div className={css.switcherContainer}>
-      <label htmlFor="languages-selector">
+      <label htmlFor="languages-selector" className={css.languagesLabel}>
         Languages
         <select
           name="Languages"
@@ -28,7 +28,7 @@ const Filters = () => {
         </select>
       </label>
 
-      <label htmlFor="levl-selector">
+      <label htmlFor="levl-selector" className={css.levlLabel}>
         Level of knowledge
         <select name="Levl" id="levl-selector" className={css.selectorLevls}>
           <option value="beginner" className={css.optionLevls}>
@@ -46,7 +46,7 @@ const Filters = () => {
         </select>
       </label>
 
-      <label htmlFor="price-selector">
+      <label htmlFor="price-selector" className={css.priceLabel}>
         Price
         <select name="Price" id="price-selector" className={css.selectorPrice}>
           <option value="thirty" className={css.optionPrice}>
@@ -55,7 +55,7 @@ const Filters = () => {
           <option value="ten" className={css.optionPrice}>
             10 $
           </option>
-          <option value="twanty" className={css.optionPrice}>
+          <option value="twanthy" className={css.optionPrice}>
             20 $
           </option>
           <option value="upper-firthy" className={css.optionPrice}>

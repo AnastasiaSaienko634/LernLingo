@@ -1,1 +1,100 @@
 /* Container */
+.switcherContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 96px;
+  padding-bottom: 32px;
+  gap: 20px;
+}
+
+/* Label */
+
+.switcherContainer label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.levlLabel {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  color: #8a8a89;
+}
+
+.languagesLabel {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  color: #8a8a89;
+}
+
+.priceLabel {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  color: #8a8a89;
+}
+
+/* Selectors */
+
+.selectorLanguages {
+  display: flex;
+  justify-content: center;
+  padding: 14px 18px 14px 18px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  color: #121417;
+  background-color: #ffffff;
+  border: 1px solid white;
+  border-radius: 14px;
+}
+
+.selectorLevls {
+  padding: 14px 0px 14px 18px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  color: #121417;
+  background-color: #ffffff;
+  border: 1px solid white;
+  border-radius: 14px;
+}
+
+.selectorPrice {
+  display: flex;
+  padding: 14px 18px 14px 18px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  color: #121417;
+  background-color: #ffffff;
+  border: 1px solid white;
+  border-radius: 14px;
+}
