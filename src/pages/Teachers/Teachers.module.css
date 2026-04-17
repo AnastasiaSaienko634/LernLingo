@@ -1,4 +1,23 @@
 .container {
   background-color: #f8f8f8;
-  height: 100vh;
+  height: 100%;
+}
+
+.containerNoting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  height: 50vh;
+}
+
+.notFindMessage {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  color: #8a8a89;
 }

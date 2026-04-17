@@ -78,7 +78,9 @@ const Teachers = () => {
       {filteredTeachers.length > 0 ? (
         <TeacherList teachers={filteredTeachers} />
       ) : (
-        <p>Nothing was find...</p>
+        <div className={css.containerNoting}>
+          <p className={css.notFindMessage}>Nothing was find...</p>
+        </div>
       )}
     </div>
   );
