@@ -4,6 +4,7 @@ import { useCourseFilterStore } from "../../store/Filters";
 const Filters = () => {
   const { setLanguage, setLevel, setPrice, language, level, price } =
     useCourseFilterStore();
+
   return (
     <div className={css.switcherContainer}>
       <label htmlFor="languages-selector" className={css.languagesLabel}>
@@ -15,19 +16,22 @@ const Filters = () => {
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
         >
-          <option value="french" className={css.optionLanguages}>
+          <option value="" className={css.optionLanguages}>
+            All
+          </option>
+          <option value="French" className={css.optionLanguages}>
             French
           </option>
-          <option value="english" className={css.optionLanguages}>
+          <option value="English" className={css.optionLanguages}>
             English
           </option>
-          <option value="german" className={css.optionLanguages}>
+          <option value="German" className={css.optionLanguages}>
             German
           </option>
-          <option value="ukrainian" className={css.optionLanguages}>
+          <option value="Ukrainian" className={css.optionLanguages}>
             Ukrainian
           </option>
-          <option value="polish" className={css.optionLanguages}>
+          <option value="Polish" className={css.optionLanguages}>
             Polish
           </option>
         </select>
@@ -42,16 +46,19 @@ const Filters = () => {
           value={level}
           onChange={(e) => setLevel(e.target.value)}
         >
-          <option value="beginner" className={css.optionLevls}>
+          <option value="" className={css.optionLevls}>
+            All
+          </option>
+          <option value="A1 Beginner" className={css.optionLevls}>
             A1 Beginner
           </option>
-          <option value="elementary" className={css.optionLevls}>
+          <option value="A2 Elementary" className={css.optionLevls}>
             A2 Elementary
           </option>
-          <option value="intermediate" className={css.optionLevls}>
+          <option value="B1 Intermediate" className={css.optionLevls}>
             B1 Intermediate
           </option>
-          <option value="upper-intermediate" className={css.optionLevls}>
+          <option value="B2 Upper-Intermediate" className={css.optionLevls}>
             B2 Upper-Intermediate
           </option>
         </select>
@@ -66,16 +73,19 @@ const Filters = () => {
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         >
-          <option value="thirty" className={css.optionPrice}>
+          <option value="" className={css.optionLevls}>
+            All
+          </option>
+          <option value="30" className={css.optionPrice}>
             30 $
           </option>
-          <option value="ten" className={css.optionPrice}>
+          <option value="10" className={css.optionPrice}>
             10 $
           </option>
-          <option value="twanthy" className={css.optionPrice}>
+          <option value="20" className={css.optionPrice}>
             20 $
           </option>
-          <option value="upper-firthy" className={css.optionPrice}>
+          <option value="40" className={css.optionPrice}>
             40 $
           </option>
         </select>

@@ -36,7 +36,7 @@ const TeacherList = ({ teachers }: Props) => {
         <>
           <ul className={css.teacherList}>
             {visibleCampers.map((teacher) => (
-              <li key={teacher.id}>
+              <li key={teacher.name}>
                 <TeacherItem teacher={teacher} />
               </li>
             ))}
