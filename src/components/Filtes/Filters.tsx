@@ -1,6 +1,9 @@
 import css from "./Filters.module.css";
+import { useCourseFilterStore } from "../../store/Filters";
 
 const Filters = () => {
+  const { setLanguage, setLevel, setPrice, language, level, price } =
+    useCourseFilterStore();
   return (
     <div className={css.switcherContainer}>
       <label htmlFor="languages-selector" className={css.languagesLabel}>
@@ -9,6 +12,8 @@ const Filters = () => {
           name="Languages"
           id="languages-selector"
           className={css.selectorLanguages}
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
         >
           <option value="french" className={css.optionLanguages}>
             French
@@ -30,7 +35,13 @@ const Filters = () => {
 
       <label htmlFor="levl-selector" className={css.levlLabel}>
         Level of knowledge
-        <select name="Levl" id="levl-selector" className={css.selectorLevls}>
+        <select
+          name="Levl"
+          id="levl-selector"
+          className={css.selectorLevls}
+          value={level}
+          onChange={(e) => setLevel(e.target.value)}
+        >
           <option value="beginner" className={css.optionLevls}>
             A1 Beginner
           </option>
@@ -48,7 +59,13 @@ const Filters = () => {
 
       <label htmlFor="price-selector" className={css.priceLabel}>
         Price
-        <select name="Price" id="price-selector" className={css.selectorPrice}>
+        <select
+          name="Price"
+          id="price-selector"
+          className={css.selectorPrice}
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        >
           <option value="thirty" className={css.optionPrice}>
             30 $
           </option>

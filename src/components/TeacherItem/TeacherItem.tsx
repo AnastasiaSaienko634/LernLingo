@@ -34,6 +34,7 @@ type Props = {
 const TeacherItem = ({ teacher }: Props) => {
   const [isFavorite, setIsFavorite] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className={css.teacherContainer}>
       <div className={css.cardContent}>
