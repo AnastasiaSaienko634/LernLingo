@@ -31,6 +31,7 @@ const Teachers = () => {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const { level, price, language } = useCourseFilterStore();
 
+  // Get Data from data base
   const db = getDatabase();
 
   useEffect(() => {
@@ -49,6 +50,7 @@ const Teachers = () => {
     getAllData();
   }, []);
 
+  // Filter Teachers
   const filteredTeachers = teachers.filter((teacher: Teacher) => {
     const matchesLanguage =
       !language ||
