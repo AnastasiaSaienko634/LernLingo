@@ -1,5 +1,5 @@
 import css from "./Filters.module.css";
-import { useCourseFilterStore } from "../../store/Filters";
+import { useCourseFilterStore } from "../../lib/store/filterStore";
 
 const Filters = () => {
   const { setLanguage, setLevel, setPrice, language, level, price } =

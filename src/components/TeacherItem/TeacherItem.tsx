@@ -4,6 +4,7 @@ import { FiBookOpen } from "react-icons/fi";
 import { GiRoundStar } from "react-icons/gi";
 import { CiHeart } from "react-icons/ci";
 import { useState } from "react";
+import { useFavoriteStore } from "../../lib/store/favoriteStore";
 
 type Review = {
   reviewer_name: string;
@@ -32,8 +33,9 @@ type Props = {
 };
 
 const TeacherItem = ({ teacher }: Props) => {
-  const [isFavorite, setIsFavorite] = useState("");
+  const { toggleFavorite, favorites } = useFavoriteStore();
   const [isOpen, setIsOpen] = useState(false);
+  const isFavorite = favorites.includes(teacher.id);
 
   return (
     <div className={css.teacherContainer}>
@@ -71,7 +73,7 @@ const TeacherItem = ({ teacher }: Props) => {
               <li className={css.teacherInfoItem}>
                 <button
                   className={css.favoriteAddBtn}
-                  onClick={() => setIsFavorite(teacher.name)}
+                  onClick={() => toggleFavorite(teacher.id)}
                 >
                   <CiHeart
                     className={` ${css.teacherFavoriteIcon} ${isFavorite ? css.active : ""} `}

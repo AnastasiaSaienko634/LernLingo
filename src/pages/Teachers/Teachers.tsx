@@ -3,7 +3,7 @@ import TeacherList from "../../components/TeacherList/TeacherList";
 import css from "./Teachers.module.css";
 import { useEffect, useState } from "react";
 import Filters from "../../components/Filtes/Filters";
-import { useCourseFilterStore } from "../../store/Filters";
+import { useCourseFilterStore } from "../../lib/store/filterStore";
 
 type Review = {
   reviewer_name: string;
