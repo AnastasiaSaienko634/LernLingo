@@ -35,7 +35,7 @@ type Props = {
 const TeacherItem = ({ teacher }: Props) => {
   const { toggleFavorite, favorites } = useFavoriteStore();
   const [isOpen, setIsOpen] = useState(false);
-  const isFavorite = favorites.includes(teacher.id);
+  const isFavorite = favorites.includes(teacher.name);
 
   return (
     <div className={css.teacherContainer}>
@@ -73,7 +73,7 @@ const TeacherItem = ({ teacher }: Props) => {
               <li className={css.teacherInfoItem}>
                 <button
                   className={css.favoriteAddBtn}
-                  onClick={() => toggleFavorite(teacher.id)}
+                  onClick={() => toggleFavorite(teacher.name)}
                 >
                   <CiHeart
                     className={` ${css.teacherFavoriteIcon} ${isFavorite ? css.active : ""} `}
