@@ -1,12 +1,29 @@
-import css from "./Filters.module.css";
 import { useCourseFilterStore } from "../../lib/store/filterStore";
+import css from "./Filters.module.css";
+import { useNavigate } from "react-router-dom";
+import { IoArrowBackSharp } from "react-icons/io5";
 
 const Filters = () => {
   const { setLanguage, setLevel, setPrice, language, level, price } =
     useCourseFilterStore();
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
   return (
     <div className={css.switcherContainer}>
+      <label htmlFor="backHome-button" className={css.buttonLabel}>
+        Back to Home
+        <button
+          onClick={handleClick}
+          id="backHome-button"
+          className={css.backHomeBtn}
+        >
+          <IoArrowBackSharp className={css.iconArrow} />
+        </button>
+      </label>
       <label htmlFor="languages-selector" className={css.languagesLabel}>
         Languages
         <select
