@@ -298,3 +298,59 @@
 .favoriteAddBtn:hover {
   cursor: pointer;
 }
+
+/* Modal */
+
+.modalWindowOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modalWindowOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.modalWindow {
+  display: flex;
+  background-color: white;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.modalTitle {
+  display: flex;
+  justify-content: center;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.modalBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  width: 150px;
+  color: black;
+  background-color: #f4c550;
+  margin-bottom: 20px;
+}

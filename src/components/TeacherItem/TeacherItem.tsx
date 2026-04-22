@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useFavoriteStore } from "../../lib/store/favoriteStore";
 import { onAuthStateChanged, type User } from "firebase/auth";
 import { auth } from "../../firebase";
-import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 type Review = {
   reviewer_name: string;
@@ -38,6 +38,7 @@ type Props = {
 const TeacherItem = ({ teacher }: Props) => {
   const { toggleFavorite, favorites } = useFavoriteStore();
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
   const isFavorite = favorites.includes(teacher.name);
 
   const [authUser, setAuthUser] = useState<User | null>(null);
@@ -56,7 +57,7 @@ const TeacherItem = ({ teacher }: Props) => {
   }, []);
   const handleClick = () => {
     if (!authUser) {
-      toast.error("Please register or log in.");
+      setModalOpen(true);
       return;
     }
 
@@ -166,6 +167,19 @@ const TeacherItem = ({ teacher }: Props) => {
           </ul>
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className={css.modalWindowOverlay}>
+          <div className={css.modalWindow}>
+            <h3 className={css.modalTitle}>
+              To save, you need to sign up or log in.
+            </h3>
+            <Link to="/" className={css.modalBtn}>
+              Go to Homepage
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
