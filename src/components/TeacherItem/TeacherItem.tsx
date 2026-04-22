@@ -3,8 +3,11 @@ import css from "./TeacherItem.module.css";
 import { FiBookOpen } from "react-icons/fi";
 import { GiRoundStar } from "react-icons/gi";
 import { CiHeart } from "react-icons/ci";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFavoriteStore } from "../../lib/store/favoriteStore";
+import { onAuthStateChanged, type User } from "firebase/auth";
+import { auth } from "../../firebase";
+import toast from "react-hot-toast";
 
 type Review = {
   reviewer_name: string;
@@ -36,6 +39,29 @@ const TeacherItem = ({ teacher }: Props) => {
   const { toggleFavorite, favorites } = useFavoriteStore();
   const [isOpen, setIsOpen] = useState(false);
   const isFavorite = favorites.includes(teacher.name);
+
+  const [authUser, setAuthUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
+    return () => {
+      listen();
+    };
+  }, []);
+  const handleClick = () => {
+    if (!authUser) {
+      toast.error("Please register or log in.");
+      return;
+    }
+
+    toggleFavorite(teacher.name);
+  };
 
   return (
     <div className={css.teacherContainer}>
@@ -71,10 +97,7 @@ const TeacherItem = ({ teacher }: Props) => {
                 </span>
               </li>
               <li className={css.teacherInfoItem}>
-                <button
-                  className={css.favoriteAddBtn}
-                  onClick={() => toggleFavorite(teacher.name)}
-                >
+                <button className={css.favoriteAddBtn} onClick={handleClick}>
                   <CiHeart
                     className={` ${css.teacherFavoriteIcon} ${isFavorite ? css.active : ""} `}
                   />
