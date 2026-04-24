@@ -395,3 +395,30 @@
 .closeIcon:focus {
   color: #f4c550;
 }
+
+/* Booking Form Button */
+.bookingFormBtn {
+  background-color: #f4c550;
+  padding: 16px 48px 16px 48px;
+  width: 232px;
+  border-radius: 12px;
+  border: 1px solid #f4c550;
+
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+
+  transition: background-color 0.2s ease;
+}
+
+.bookingFormBtn:hover {
+  cursor: pointer;
+  background-color: #ffdc86;
+}
+
+.bookingFormBtn:focus {
+  cursor: pointer;
+  background-color: #ffdc86;
+}

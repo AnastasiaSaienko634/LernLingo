@@ -1,0 +1,39 @@
+/*  Booking Form */
+.overlayForm {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerForm {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 500px;
+}
+
+.titleForm {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -2%;
+}
+
+.descriptionForm {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  width: 427px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #121417cc;
+}

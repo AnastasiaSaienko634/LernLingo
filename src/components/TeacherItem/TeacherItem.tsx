@@ -9,6 +9,7 @@ import { onAuthStateChanged, type User } from "firebase/auth";
 import { auth } from "../../firebase";
 import { Link } from "react-router-dom";
 import { MdClose } from "react-icons/md";
+import BookingForm from "../BookingForm/BookingForm";
 
 type Review = {
   reviewer_name: string;
@@ -40,6 +41,7 @@ const TeacherItem = ({ teacher }: Props) => {
   const { toggleFavorite, favorites } = useFavoriteStore();
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isOpenBooking, openBookingForm] = useState(false);
   const isFavorite = favorites.includes(teacher.name);
 
   const [authUser, setAuthUser] = useState<User | null>(null);
@@ -162,6 +164,12 @@ const TeacherItem = ({ teacher }: Props) => {
                   <p className={css.reviewerComment}>{review.comment}</p>
                 </div>
               ))}
+              <button
+                className={css.bookingFormBtn}
+                onClick={() => openBookingForm(true)}
+              >
+                Book trial lesson
+              </button>
             </div>
           )}
 
@@ -175,7 +183,7 @@ const TeacherItem = ({ teacher }: Props) => {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Modal Favorite*/}
       {isModalOpen && (
         <div className={css.modalWindowOverlay} onClick={handleOverlayClick}>
           <div className={css.modalWindow}>
@@ -193,6 +201,11 @@ const TeacherItem = ({ teacher }: Props) => {
             </Link>
           </div>
         </div>
+      )}
+
+      {/* MOdal Booking Form */}
+      {isOpenBooking && (
+        <BookingForm opneBookingForm={openBookingForm} teacher={teacher} />
       )}
     </div>
   );
