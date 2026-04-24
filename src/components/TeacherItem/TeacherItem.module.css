@@ -336,7 +336,6 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  padding-top: 20px;
   padding-bottom: 20px;
 }
 
@@ -353,4 +352,46 @@
   color: black;
   background-color: #f4c550;
   margin-bottom: 20px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.modalBtn:hover {
+  cursor: pointer;
+  background-color: #ffdc86;
+}
+
+.modalBtn:focus {
+  cursor: pointer;
+  background-color: #ffdc86;
+}
+
+/* Close Modal */
+
+.closeModalWindow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-right: 10px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.closeIcon {
+  width: 27px;
+  height: 27px;
+}
+
+.closeIcon:hover {
+  color: #f4c550;
+}
+
+.closeIcon:focus {
+  color: #f4c550;
 }

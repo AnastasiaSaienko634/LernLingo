@@ -8,6 +8,7 @@ import { useFavoriteStore } from "../../lib/store/favoriteStore";
 import { onAuthStateChanged, type User } from "firebase/auth";
 import { auth } from "../../firebase";
 import { Link } from "react-router-dom";
+import { MdClose } from "react-icons/md";
 
 type Review = {
   reviewer_name: string;
@@ -62,6 +63,12 @@ const TeacherItem = ({ teacher }: Props) => {
     }
 
     toggleFavorite(teacher.name);
+  };
+
+  const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      setModalOpen(false);
+    }
   };
 
   return (
@@ -168,9 +175,16 @@ const TeacherItem = ({ teacher }: Props) => {
         </div>
       </div>
 
+      {/* Modal */}
       {isModalOpen && (
-        <div className={css.modalWindowOverlay}>
+        <div className={css.modalWindowOverlay} onClick={handleOverlayClick}>
           <div className={css.modalWindow}>
+            <button
+              className={css.closeModalWindow}
+              onClick={() => setModalOpen(false)}
+            >
+              <MdClose className={css.closeIcon} />
+            </button>
             <h3 className={css.modalTitle}>
               To save, you need to sign up or log in.
             </h3>
