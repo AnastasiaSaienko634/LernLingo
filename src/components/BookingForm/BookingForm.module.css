@@ -12,13 +12,14 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 70vh;
-  width: 500px;
+  width: 350px;
+  padding-left: 64px;
+  border-radius: 50px;
 }
 
 .titleForm {
+  padding-top: 64px;
   font-family: Roboto;
   font-weight: 500;
   font-size: 40px;
@@ -32,8 +33,40 @@
   font-size: 16px;
   line-height: 22px;
   letter-spacing: 0%;
-  width: 427px;
+  width: 300px;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #121417cc;
+}
+
+/* Teacher */
+.containerTeacher {
+  display: flex;
+}
+
+.teacherPhoto {
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  margin-right: 14px;
+}
+
+.titleTeacher {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #8a8a89;
+}
+
+.teacherName {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #121417;
 }

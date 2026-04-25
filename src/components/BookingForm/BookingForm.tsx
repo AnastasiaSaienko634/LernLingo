@@ -28,8 +28,8 @@ type Props = {
   opneBookingForm: () => void;
 };
 
-const BookingForm = () => {
-  const handleSubmit = ({ teacher, opneBookingForm }: Props) => {};
+const BookingForm = ({ teacher, opneBookingForm }: Props) => {
+  const handleSubmit = () => {};
   return (
     <div className={css.overlayForm}>
       <div className={css.containerForm}>
@@ -38,14 +38,26 @@ const BookingForm = () => {
           Our experienced tutor will assess your current language level, discuss
           your learning goals, and tailor the lesson to your specific needs.
         </p>
-        <Formik
+
+        <div className={css.containerTeacher}>
+          <img
+            className={css.teacherPhoto}
+            src={teacher.avatar_url}
+            alt="Teacher Photo"
+          />
+          <div className={css.containerDescrip}>
+            <p className={css.titleTeacher}>Your teacher</p>
+            <h2 className={css.teacherName}>Jane Smith</h2>
+          </div>
+        </div>
+        {/* <Formik
           initialValues={{ name: "", email: "", number: "" }}
           onSubmit={handleSubmit}
         >
           <Form>
             <Field />
           </Form>
-        </Formik>
+        </Formik> */}
       </div>
     </div>
   );
