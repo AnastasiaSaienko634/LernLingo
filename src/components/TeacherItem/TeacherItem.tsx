@@ -205,7 +205,7 @@ const TeacherItem = ({ teacher }: Props) => {
 
       {/* MOdal Booking Form */}
       {isOpenBooking && (
-        <BookingForm opneBookingForm={openBookingForm} teacher={teacher} />
+        <BookingForm openBookingForm={openBookingForm} teacher={teacher} />
       )}
     </div>
   );

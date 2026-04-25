@@ -1,5 +1,6 @@
 import { Formik, Form, Field } from "formik";
 import css from "./BookingForm.module.css";
+import { IoIosClose } from "react-icons/io";
 
 type Review = {
   reviewer_name: string;
@@ -25,14 +26,25 @@ type Teacher = {
 
 type Props = {
   teacher: Teacher;
-  opneBookingForm: () => void;
+  openBookingForm: (value: boolean) => void;
 };
 
-const BookingForm = ({ teacher, opneBookingForm }: Props) => {
-  const handleSubmit = () => {};
+const BookingForm = ({ teacher, openBookingForm }: Props) => {
+  const handleSubmit = (values) => {
+    console.log(values);
+  };
+
+  const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      openBookingForm(false);
+    }
+  };
   return (
-    <div className={css.overlayForm}>
+    <div className={css.overlayForm} onClick={handleOverlayClick}>
       <div className={css.containerForm}>
+        <button className={css.closeBtn} onClick={() => openBookingForm(false)}>
+          <IoIosClose className={css.closeIcon} />
+        </button>
         <h1 className={css.titleForm}>Book trial lesson</h1>
         <p className={css.descriptionForm}>
           Our experienced tutor will assess your current language level, discuss
@@ -50,14 +62,66 @@ const BookingForm = ({ teacher, opneBookingForm }: Props) => {
             <h2 className={css.teacherName}>Jane Smith</h2>
           </div>
         </div>
-        {/* <Formik
-          initialValues={{ name: "", email: "", number: "" }}
+        <Formik
+          initialValues={{
+            reason: "career",
+            fullName: "",
+            email: "",
+            phone: "",
+          }}
           onSubmit={handleSubmit}
         >
           <Form>
-            <Field />
+            <h3 className={css.titleFormTeach}>
+              What is your main reason for learning English?
+            </h3>
+            <div className={css.radioList}>
+              <label>
+                <Field type="radio" name="reason" value="career" />
+                Career and business
+              </label>
+
+              <label>
+                <Field type="radio" name="reason" value="kids" />
+                Lesson for kids
+              </label>
+
+              <label>
+                <Field type="radio" name="reason" value="abroad" />
+                Living abroad
+              </label>
+
+              <label>
+                <Field type="radio" name="reason" value="exams" />
+                Exams and coursework
+              </label>
+
+              <label>
+                <Field type="radio" name="reason" value="hobby" />
+                Culture, travel or hobby
+              </label>
+            </div>
+
+            <div className={css.containerFormTeach}>
+              <Field
+                className={css.teacherInput}
+                name="fullName"
+                placeholder="Full Name"
+              />
+              <Field
+                className={css.teacherInput}
+                name="email"
+                placeholder="Email"
+              />
+              <Field
+                className={css.teacherInput}
+                name="phone"
+                placeholder="Phone number"
+              />
+            </div>
+            <button className={css.btnForm}>Book</button>
           </Form>
-        </Formik> */}
+        </Formik>
       </div>
     </div>
   );
