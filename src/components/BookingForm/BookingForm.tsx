@@ -24,13 +24,20 @@ type Teacher = {
   surname: string;
 };
 
+type TeacherInf = {
+  reason: string;
+  fullName: string;
+  email: string;
+  phone: string;
+};
+
 type Props = {
   teacher: Teacher;
   openBookingForm: (value: boolean) => void;
 };
 
 const BookingForm = ({ teacher, openBookingForm }: Props) => {
-  const handleSubmit = (values) => {
+  const handleSubmit = (values: TeacherInf) => {
     console.log(values);
   };
 

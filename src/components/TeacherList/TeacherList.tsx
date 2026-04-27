@@ -29,13 +29,13 @@ type Props = {
 
 const TeacherList = ({ teachers }: Props) => {
   const [visibleCount, setVisibleCount] = useState(4);
-  const visibleCampers = teachers.slice(0, visibleCount);
+  const visiableTeachers = teachers.slice(0, visibleCount);
   return (
     <div className={css.teacherListContainer}>
-      {visibleCampers ? (
+      {visiableTeachers ? (
         <>
           <ul className={css.teacherList}>
-            {visibleCampers.map((teacher) => (
+            {visiableTeachers.map((teacher) => (
               <li key={teacher.name}>
                 <TeacherItem teacher={teacher} />
               </li>
