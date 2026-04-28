@@ -3,9 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 96px;
-  padding-bottom: 32px;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 20px;
 }
 
 /* Label */
@@ -149,4 +149,14 @@
 
 .iconArrow:focus {
   color: #f4c550;
+}
+
+/* Dekstop */
+@media (min-width: 1280px) {
+  .switcherContainer {
+    padding-top: 96px;
+    padding-bottom: 32px;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
 }

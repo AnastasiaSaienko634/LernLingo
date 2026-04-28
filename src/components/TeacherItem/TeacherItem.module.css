@@ -1,6 +1,7 @@
 /*Teacher Container */
 .teacherContainer {
-  width: 1184px;
+  max-width: 300px;
+  width: 100%;
   background-color: #fff;
   border-radius: 24px;
   padding: 24px;
@@ -9,16 +10,16 @@
 /* Card Content */
 .cardContent {
   display: flex;
-  gap: 24px;
+  gap: 10px;
 }
 
 /* Photo Container */
 .teacherPhotoContainer {
-  min-width: 96px;
-  height: 96px;
+  min-width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 3px solid #fbe9ba;
-  padding: 12px 12px 12px 12px;
+  padding: 5px 5px 5px 5px;
   overflow: hidden;
 }
 
@@ -35,21 +36,25 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+
   gap: 8px;
 }
 
 /* Header Container */
 .headerContainer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 0px;
+  flex-wrap: wrap;
+  width: 200px;
 }
 
 /* Teacher Info */
 .teacherInfo {
   display: flex;
   font-weight: 500;
-  gap: 32px;
+  gap: 10px;
+  flex-wrap: wrap;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
@@ -108,10 +113,10 @@
 .teacherName {
   font-family: Roboto;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 24px;
   letter-spacing: 0%;
-  padding-bottom: 32px;
+  padding-bottom: 5px;
 }
 
 /* Languages */
@@ -144,56 +149,20 @@
 
 /* Lessons Info */
 .lessonInfo {
-  color: #8a8a89;
-  display: flex;
-  gap: 4px;
-  font-family: Roboto;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  text-decoration-style: solid;
-  text-decoration-thickness: 0%;
+  display: none;
 }
 
 .lessonsInfoDescription {
-  font-family: Roboto;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  color: black;
+  display: none;
 }
 
 /* Conditions */
 .conditions {
-  color: #8a8a89;
-  display: flex;
-  gap: 4px;
-  font-family: Roboto;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  text-decoration-style: solid;
-  text-decoration-thickness: 0%;
+  display: none;
 }
 
 .conditionsDescription {
-  font-family: Roboto;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  color: black;
+  display: none;
 }
 
 .readMoreBtn {
@@ -219,8 +188,10 @@
 /* Language Levl List */
 .languageLevelsList {
   display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
   gap: 8px;
-  padding-top: 32px;
+  padding-top: 12px;
 }
 
 /* Language Levl List Item */
@@ -421,4 +392,119 @@
 .bookingFormBtn:focus {
   cursor: pointer;
   background-color: #ffdc86;
+}
+
+/* Dekstop */
+@media (min-width: 1280px) {
+  .teacherContainer {
+    max-width: 1184px;
+    width: 1184px;
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 24px;
+  }
+
+  .teacherPhotoContainer {
+    min-width: 96px;
+    height: 96px;
+    padding: 12px 12px 12px 12px;
+  }
+
+  .cardContent {
+    display: flex;
+    gap: 20px;
+  }
+
+  .teacherInfo {
+    display: flex;
+    flex-wrap: nowrap;
+    font-weight: 500;
+    gap: 32px;
+  }
+
+  .teacherName {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    padding-bottom: 30px;
+  }
+
+  /* Header Container */
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  /* Lessons Info */
+  .lessonInfo {
+    color: #8a8a89;
+    display: flex;
+    gap: 4px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0%;
+  }
+
+  .lessonsInfoDescription {
+    font-family: Roboto;
+    display: flex;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: black;
+  }
+
+  /* Conditions */
+  .conditions {
+    color: #8a8a89;
+    display: flex;
+    gap: 4px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0%;
+  }
+
+  .conditionsDescription {
+    display: flex;
+    font-family: Roboto;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: black;
+  }
+
+  /* Language Levl List */
+  .languageLevelsList {
+    display: flex;
+    gap: 8px;
+    padding-top: 32px;
+  }
+
+  /* Language Levl List Item */
+  .languageLevlItem {
+    justify-content: none;
+  }
 }
