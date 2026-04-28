@@ -92,7 +92,7 @@ const Header = () => {
         )}
       </nav>
       <nav className={css.containerPhone}>
-        <a href="" className={css.logoLink}>
+        <Link to="/" className={css.logoLink}>
           <img
             src={logoIcon}
             alt=""
@@ -101,14 +101,14 @@ const Header = () => {
             className={css.logoIcon}
           />
           LearnLingo
-        </a>
+        </Link>
 
         {isOpenMenu ? (
           <>
             <div className={css.navigation}>
               <div className={css.headerPhone}>
                 {/* Logo */}
-                <a href="" className={css.logoLinkPhone}>
+                <Link to="/" className={css.logoLinkPhone}>
                   <img
                     src={logoIcon}
                     alt=""
@@ -117,7 +117,7 @@ const Header = () => {
                     className={css.logoIcon}
                   />
                   LearnLingo
-                </a>
+                </Link>
                 {/* Кнопка для закриття модалки навiгацii  */}
                 <button onClick={toggelMenu} className={css.closeBtn}>
                   <IoIosClose className={css.closeIcon} />
@@ -128,14 +128,14 @@ const Header = () => {
                 {/* Список зі сторінками */}
                 <ul className={css.pages}>
                   <li>
-                    <a href="" className={css.link}>
+                    <Link to="/" className={css.link}>
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="" className={css.link}>
+                    <Link to="/teachers" className={css.link}>
                       Teachers
-                    </a>
+                    </Link>
                   </li>
                 </ul>
 
