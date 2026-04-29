@@ -118,10 +118,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 14px 18px 14px 18px;
+  padding: 5px 12px 5px 12px;
   font-family: Roboto;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
   vertical-align: middle;
@@ -139,8 +139,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
 }
 
 .iconArrow:hover {
@@ -158,5 +158,17 @@
     padding-bottom: 32px;
     gap: 20px;
     flex-wrap: nowrap;
+  }
+
+  /* Back Home Arrow */
+  .backHomeBtn {
+    padding: 14px 18px 14px 18px;
+    font-size: 18px;
+  }
+
+  /*  Icon Arrow Back */
+  .iconArrow {
+    width: 25px;
+    height: 25px;
   }
 }

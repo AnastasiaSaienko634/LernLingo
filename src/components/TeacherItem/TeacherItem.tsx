@@ -76,9 +76,9 @@ const TeacherItem = ({ teacher }: Props) => {
   return (
     <div className={css.teacherContainer}>
       <div className={css.cardContent}>
-        <div className={css.teacherPhotoContainer}>
+        <div className={css.teacherPhotoContainerPK}>
           <img
-            className={css.teacherPhoto}
+            className={css.teacherPhotoPK}
             src={teacher.avatar_url}
             alt="photo"
           />
@@ -114,6 +114,14 @@ const TeacherItem = ({ teacher }: Props) => {
                 </button>
               </li>
             </ul>
+          </div>
+
+          <div className={css.teacherPhotoContainerMB}>
+            <img
+              className={css.teacherPhotoMB}
+              src={teacher.avatar_url}
+              alt="photo"
+            />
           </div>
 
           <h2 className={css.teacherName}>

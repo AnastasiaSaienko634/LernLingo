@@ -10,25 +10,34 @@
 /* Card Content */
 .cardContent {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
-/* Photo Container */
-.teacherPhotoContainer {
-  min-width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 3px solid #fbe9ba;
+/* Photo Container PK */
+.teacherPhotoContainerPK {
+  display: none;
+}
+
+/* Photo PK */
+.teacherPhotoPK {
+  display: none;
+}
+
+/* Photo Container MB */
+.teacherPhotoContainerMB {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #f4c550;
+  border-radius: 20%;
   padding: 5px 5px 5px 5px;
-  overflow: hidden;
 }
 
-/* Photo */
-.teacherPhoto {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
+.teacherPhotoMB {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  border-radius: 20%;
 }
 
 /* Info Container */
@@ -85,6 +94,7 @@
 .teacherFavoriteIcon {
   height: 30px;
   width: 30px;
+  color: black;
   transition: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -170,6 +180,7 @@
   width: 78px;
   background-color: white;
   border: none;
+  color: black;
 
   font-family: Roboto;
   font-weight: 500;
@@ -404,15 +415,29 @@
     padding: 24px;
   }
 
-  .teacherPhotoContainer {
-    min-width: 96px;
-    height: 96px;
-    padding: 12px 12px 12px 12px;
-  }
-
   .cardContent {
     display: flex;
     gap: 20px;
+  }
+
+  /* Photo Container */
+  .teacherPhotoContainerPK {
+    display: flex;
+    border-radius: 50%;
+    border: 3px solid #fbe9ba;
+    min-width: 96px;
+    height: 96px;
+    padding: 12px 12px 12px 12px;
+    overflow: hidden;
+  }
+
+  /* Photo */
+  .teacherPhotoPK {
+    display: flex;
+    width: 96px;
+    height: px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   .teacherInfo {
@@ -506,5 +531,14 @@
   /* Language Levl List Item */
   .languageLevlItem {
     justify-content: none;
+  }
+
+  /* Photo Container MB */
+  .teacherPhotoContainerMB {
+    display: none;
+  }
+
+  .teacherPhotoMB {
+    display: none;
   }
 }
