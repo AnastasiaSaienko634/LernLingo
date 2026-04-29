@@ -1,6 +1,6 @@
 /*Teacher Container */
 .teacherContainer {
-  max-width: 300px;
+  max-width: 500px;
   width: 100%;
   background-color: #fff;
   border-radius: 24px;
@@ -419,7 +419,7 @@
     display: flex;
     flex-wrap: nowrap;
     font-weight: 500;
-    gap: 32px;
+    gap: 50px;
   }
 
   .teacherName {
