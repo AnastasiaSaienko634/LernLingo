@@ -199,7 +199,6 @@
 /* Language Levl List */
 .languageLevelsList {
   display: flex;
-  width: 250px;
   justify-content: start;
   flex-wrap: wrap;
   gap: 8px;
@@ -384,6 +383,7 @@
   background-color: #f4c550;
   padding: 16px 48px 16px 48px;
   width: 232px;
+  color: #121417;
   border-radius: 12px;
   border: 1px solid #f4c550;
 
