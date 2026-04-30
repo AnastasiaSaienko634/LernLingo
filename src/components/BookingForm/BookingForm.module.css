@@ -36,7 +36,7 @@
   font-size: 14px;
   line-height: 22px;
   letter-spacing: 0%;
-  width: 380px;
+  width: 320px;
   padding-top: 5px;
   padding-bottom: 10px;
   color: #121417cc;
@@ -117,7 +117,7 @@
   line-height: 22px;
   letter-spacing: 0%;
   color: #121417;
-  width: 310px;
+  width: 300px;
   padding: 12px 18px 12px;
   border: 1px solid #1214171a;
   border-radius: 12px;
@@ -127,9 +127,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-left: auto;
+  margin-right: auto;
   font-family: Roboto;
-  width: 350px;
+  width: 300px;
   background-color: #f4c550;
   border: 1px solid #f4c550;
   border-radius: 12px;
@@ -218,5 +219,26 @@
     padding-top: 5px;
     padding-bottom: 10px;
     color: #121417cc;
+  }
+
+  .btnForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Roboto;
+    width: 350px;
+    background-color: #f4c550;
+    border: 1px solid #f4c550;
+    border-radius: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    color: #121417;
+    cursor: pointer;
   }
 }

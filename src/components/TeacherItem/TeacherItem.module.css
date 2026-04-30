@@ -288,16 +288,8 @@
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.modalWindowOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -369,6 +361,7 @@
 .closeIcon {
   width: 27px;
   height: 27px;
+  color: #121417;
 }
 
 .closeIcon:hover {
