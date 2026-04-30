@@ -1,6 +1,6 @@
 /*Teacher Container */
 .teacherContainer {
-  max-width: 500px;
+  max-width: 380px;
   width: 100%;
   background-color: #fff;
   border-radius: 24px;
@@ -264,7 +264,8 @@
 .reviewerComment {
   font-family: Roboto;
   font-weight: 500;
-  font-size: 16px;
+  width: 350px;
+  font-size: 14px;
   line-height: 24px;
   letter-spacing: 0%;
   vertical-align: middle;
@@ -381,7 +382,7 @@
 /* Booking Form Button */
 .bookingFormBtn {
   background-color: #f4c550;
-  padding: 16px 48px 16px 48px;
+  padding: 10px 12px 10px 12px;
   width: 232px;
   color: #121417;
   border-radius: 12px;
@@ -542,5 +543,15 @@
 
   .teacherPhotoMB {
     display: none;
+  }
+
+  .reviewerComment {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  /* Booking Form Button */
+  .bookingFormBtn {
+    padding: 16px 48px 16px 48px;
   }
 }
