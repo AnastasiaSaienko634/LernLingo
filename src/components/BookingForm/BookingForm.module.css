@@ -12,9 +12,9 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: 700px;
+  height: 750px;
   width: 350px;
-  padding-left: 10px;
+  padding-left: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 50px;
@@ -127,7 +127,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
   margin-right: auto;
   font-family: Roboto;
   width: 300px;
@@ -191,7 +190,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: 700px;
+    height: 750px;
     width: 400px;
     padding-left: 50px;
     padding-right: 20px;
@@ -241,4 +240,10 @@
     color: #121417;
     cursor: pointer;
   }
+}
+
+/* Shema Validation ErrorMessage */
+.errorMessage {
+  font-size: 12px;
+  color: red;
 }

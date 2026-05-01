@@ -1,6 +1,7 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import css from "./BookingForm.module.css";
 import { IoIosClose } from "react-icons/io";
+import * as Yup from "yup";
 
 type Review = {
   reviewer_name: string;
@@ -35,6 +36,19 @@ type Props = {
   teacher: Teacher;
   openBookingForm: (value: boolean) => void;
 };
+
+// Booking Schmema / Validation
+const BookingSchema = Yup.object().shape({
+  fullName: Yup.string()
+    .min(2, "Too Short Name!")
+    .max(50, "Too Long Name!")
+    .required("Required Name!"),
+  email: Yup.string().email("Invalid email!").required("Required Email!"),
+  phone: Yup.number()
+    .min(2, "Too Short Phone!")
+    .max(18, "Too Long Phone!")
+    .required("Required Phone!"),
+});
 
 const BookingForm = ({ teacher, openBookingForm }: Props) => {
   const handleSubmit = (values: TeacherInf) => {
@@ -77,6 +91,7 @@ const BookingForm = ({ teacher, openBookingForm }: Props) => {
             phone: "",
           }}
           onSubmit={handleSubmit}
+          validationSchema={BookingSchema}
         >
           <Form>
             <h3 className={css.titleFormTeach}>
@@ -115,15 +130,30 @@ const BookingForm = ({ teacher, openBookingForm }: Props) => {
                 name="fullName"
                 placeholder="Full Name"
               />
+              <ErrorMessage
+                name="fullName"
+                component="span"
+                className={css.errorMessage}
+              />
               <Field
                 className={css.teacherInput}
                 name="email"
                 placeholder="Email"
               />
+              <ErrorMessage
+                name="email"
+                component="span"
+                className={css.errorMessage}
+              />
               <Field
                 className={css.teacherInput}
                 name="phone"
                 placeholder="Phone number"
+              />
+              <ErrorMessage
+                name="phone"
+                component="span"
+                className={css.errorMessage}
               />
             </div>
             <button className={css.btnForm}>Book</button>
