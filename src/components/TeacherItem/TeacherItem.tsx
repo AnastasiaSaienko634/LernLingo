@@ -47,7 +47,7 @@ const TeacherItem = ({ teacher }: Props) => {
   const [authUser, setAuthUser] = useState<User | null>(null);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpenBooking) return;
 
     const scrollY = window.scrollY;
 
@@ -64,7 +64,7 @@ const TeacherItem = ({ teacher }: Props) => {
 
       window.scrollTo(0, parseInt(y || "0") * -1);
     };
-  }, [isOpen]);
+  }, [isOpenBooking]);
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {

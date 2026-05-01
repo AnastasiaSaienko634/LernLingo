@@ -12,7 +12,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: 750px;
+  height: 620px;
   width: 350px;
   padding-left: 15px;
   padding-top: 10px;
@@ -31,15 +31,7 @@
 }
 
 .descriptionForm {
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  letter-spacing: 0%;
-  width: 320px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  color: #121417cc;
+  display: none;
 }
 
 /* Teacher */
@@ -209,6 +201,7 @@
   }
 
   .descriptionForm {
+    display: flex;
     font-family: Roboto;
     font-weight: 400;
     font-size: 14px;
