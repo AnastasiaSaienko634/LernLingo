@@ -1,7 +1,9 @@
+/* Dekstop Container */
 .containerDekstop {
   display: none;
 }
 
+/* Phone Container */
 .containerPhone {
   display: flex;
   flex-wrap: wrap;
@@ -13,6 +15,7 @@
   padding-right: 16px;
 }
 
+/* Navigation Menu */
 .navigation {
   position: fixed;
   top: 0%;

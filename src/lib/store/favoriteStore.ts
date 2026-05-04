@@ -3,7 +3,7 @@ import { persist } from "zustand/middleware";
 
 interface FavoriteStore {
   favorites: string[];
-  toggleFavorite: (id: string) => void;
+  toggleFavorite: (name: string) => void;
 }
 
 export const useFavoriteStore = create<FavoriteStore>()(

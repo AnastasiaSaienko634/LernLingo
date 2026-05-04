@@ -1,3 +1,4 @@
+/* Modal Overlay */
 .modalOverlay {
   position: fixed;
   inset: 0;
@@ -132,7 +133,9 @@
   line-height: 28px;
   letter-spacing: 0%;
   margin-bottom: 64px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 /* Hover, Focus, Active / Submit Button   */
 .registerSubmit:hover {
@@ -168,7 +171,9 @@
   padding-right: 25px;
   width: 35px;
   height: 35px;
-  transition: color 0.2s ease, color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    color 0.2s ease;
 }
 
 .closeIcon:hover {

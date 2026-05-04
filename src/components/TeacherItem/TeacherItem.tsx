@@ -87,6 +87,7 @@ const TeacherItem = ({ teacher }: Props) => {
     toggleFavorite(teacher.name);
   };
 
+  // Overlay handle click
   const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
       setModalOpen(false);

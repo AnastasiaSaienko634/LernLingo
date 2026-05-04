@@ -1,3 +1,4 @@
+// Favorites Page soon
 const Favorites = () => {
   return <div></div>;
 };

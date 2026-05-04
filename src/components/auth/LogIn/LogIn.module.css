@@ -1,3 +1,4 @@
+/* Modal Overlay */
 .modalOverlay {
   position: fixed;
   inset: 0;
@@ -41,7 +42,6 @@
 }
 
 /* Login Form */
-
 .logInForm {
   padding-left: 64px;
   padding-right: 64px;
@@ -84,7 +84,9 @@
   border-radius: 12px;
   padding: 16px 16px 16px 16px;
   font-size: 16px;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* Hover, Focus, Active / Password Field  */
@@ -112,7 +114,9 @@
   line-height: 28px;
   letter-spacing: 0%;
   margin-bottom: 64px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 /* Hover, Focus, Active / Submit Button   */
 .loginSubmit:hover {
@@ -148,7 +152,9 @@
   padding-right: 25px;
   width: 35px;
   height: 35px;
-  transition: color 0.2s ease, color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    color 0.2s ease;
 }
 
 .closeIcon:hover {
