@@ -37,5 +37,5 @@ Built with performance in mind
 
 🛠️ Tech Stack
 Frontend: React
-Styling: CSS 
+Styling: CSS
 Deployment: Vercel
