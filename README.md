@@ -1,37 +1,37 @@
 🌍 LearnLingo
 
-LearnLingo is an online platform that helps users find the perfect language tutor quickly and conveniently.
+LearnLingo is an online platform that helps you find the perfect language tutor quickly and effortlessly.
 
-You can explore tutors in multiple languages, compare their prices, read real student reviews, and choose the best fit — all in one place.
+Explore tutors across multiple languages, compare prices, and choose based on real student reviews — all in one place.
+
+🔗 Live Demo: https://lern-lingo.vercel.app/
 
 ✨ Features
-🔎 Tutor Discovery
-Browse a wide range of language tutors
-Filter by language (English, French, Polish, Ukrainian, German)
+🔎 Discover Tutors
+Browse a wide selection of language tutors
+Available languages: English, French, Polish, Ukrainian, German
 View detailed tutor profiles
-------
+
 ⭐ Ratings & Reviews
-See real student ratings
-Read feedback before choosing a tutor
-Make informed decisions based on community experience
-----
-💸 Pricing Transparency
-Compare tutor prices ة
-Find options that match your budget
-No hidden costs
-----
+Real student ratings
+Honest feedback from learners
+Make confident decisions
+
+💸 Transparent Pricing
+Easily compare tutor rates
+Affordable options for different budgets
+No hidden fees
+
 📱 Responsive Design
-Optimized for mobile,  and desktop
-----
-⚡ Fast & Modern UI
-Built with React
+Fully optimized for mobile, tablet, and desktop
+Smooth and consistent UX on any device
+
+⚡ Modern UI
 Clean and intuitive interface
-Fast navigation and loading
-----
+Fast navigation
+Built with performance in mind
+
 🛠️ Tech Stack
 Frontend: React
-Styling: CSS Module
+Styling: CSS 
 Deployment: Vercel
------
-***📬 Feedback
-If you find any bugs or have ideas for improvement, don’t hesitate to share your feedback!
