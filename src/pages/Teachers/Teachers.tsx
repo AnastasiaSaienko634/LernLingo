@@ -4,6 +4,8 @@ import css from "./Teachers.module.css";
 import { useEffect, useState } from "react";
 import Filters from "../../components/Filtes/Filters";
 import { useCourseFilterStore } from "../../lib/store/filterStore";
+import MetaTags from "../../components/MetaTags/MetaTags";
+import img from "../../../public/heroPhoto.png";
 
 type Review = {
   reviewer_name: string;
@@ -30,6 +32,12 @@ type Teacher = {
 const Teachers = () => {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const { level, price, language } = useCourseFilterStore();
+
+  <MetaTags
+    title="Teachers"
+    description="LernLingo helps people find the best teacher for learning languages based on their needs and goals. It connects learners with qualified instructors and makes the learning process more effective and personalized."
+    image={img}
+  />;
 
   // Get Data from data base
   const db = getDatabase();
