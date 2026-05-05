@@ -45,11 +45,20 @@ const Filters = () => {
           <option value="German" className={css.optionLanguages}>
             German
           </option>
-          <option value="Ukrainian" className={css.optionLanguages}>
-            Ukrainian
+          <option value="Mandarin Chinese" className={css.optionLanguages}>
+            Mandarin
           </option>
-          <option value="Polish" className={css.optionLanguages}>
-            Polish
+          <option value="Italian" className={css.optionLanguages}>
+            Italian
+          </option>
+          <option value="Spanish" className={css.optionLanguages}>
+            Spanish
+          </option>
+          <option value="Korean" className={css.optionLanguages}>
+            Korean
+          </option>
+          <option value="Vietnamese" className={css.optionLanguages}>
+            Vietnamese
           </option>
         </select>
       </label>
@@ -93,14 +102,14 @@ const Filters = () => {
           <option value="" className={css.optionLevls}>
             All
           </option>
-          <option value="30" className={css.optionPrice}>
-            30 $
-          </option>
           <option value="10" className={css.optionPrice}>
             10 $
           </option>
           <option value="20" className={css.optionPrice}>
             20 $
+          </option>
+          <option value="30" className={css.optionPrice}>
+            30 $
           </option>
           <option value="40" className={css.optionPrice}>
             40 $

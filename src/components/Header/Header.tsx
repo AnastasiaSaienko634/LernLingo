@@ -21,6 +21,46 @@ const Header = () => {
   const toggelLogInMenu = () => setIsOpenLogIn(!isOpenLogIn);
   const toggelRegister = () => setIsOpenMenuRegister(!isOpenRegister);
 
+  useEffect(() => {
+    if (!isOpenRegister) return;
+
+    const scrollY = window.scrollY;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+
+    return () => {
+      const y = document.body.style.top;
+
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+
+      window.scrollTo(0, parseInt(y || "0") * -1);
+    };
+  }, [isOpenRegister]);
+
+  useEffect(() => {
+    if (!isOpenLogIn) return;
+
+    const scrollY = window.scrollY;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+
+    return () => {
+      const y = document.body.style.top;
+
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+
+      window.scrollTo(0, parseInt(y || "0") * -1);
+    };
+  }, [isOpenLogIn]);
+
   const [authUser, setAuthUser] = useState<User | null>(null);
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
@@ -34,6 +74,10 @@ const Header = () => {
       listen();
     };
   }, []);
+
+  const handleClick = () => {
+    setIsOpenMenu(false);
+  };
 
   return (
     <>
@@ -108,7 +152,11 @@ const Header = () => {
             <div className={css.navigation}>
               <div className={css.headerPhone}>
                 {/* Logo */}
-                <Link to="/" className={css.logoLinkPhone}>
+                <Link
+                  to="/"
+                  onClick={handleClick}
+                  className={css.logoLinkPhone}
+                >
                   <img
                     src={logoIcon}
                     alt=""

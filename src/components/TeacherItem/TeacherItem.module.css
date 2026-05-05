@@ -401,6 +401,18 @@
 }
 
 /* Dekstop */
+@media (min-width: 768px) {
+  /*Teacher Container */
+  .teacherContainer {
+    max-width: 680px;
+    width: 600px;
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 24px;
+  }
+}
+
+/* Dekstop */
 @media (min-width: 1280px) {
   .teacherContainer {
     max-width: 1184px;
