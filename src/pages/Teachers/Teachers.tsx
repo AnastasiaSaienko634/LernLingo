@@ -33,12 +33,6 @@ const Teachers = () => {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const { level, price, language } = useCourseFilterStore();
 
-  <MetaTags
-    title="Teachers"
-    description="LernLingo helps people find the best teacher for learning languages based on their needs and goals. It connects learners with qualified instructors and makes the learning process more effective and personalized."
-    image={img}
-  />;
-
   // Get Data from data base
   const db = getDatabase();
 
@@ -92,6 +86,12 @@ const Teachers = () => {
           <p className={css.notFindMessage}>Nothing was find...</p>
         </div>
       )}
+      <MetaTags
+        title="Teachers"
+        description="LernLingo helps people find the best teacher for learning languages based on their needs and goals. It connects learners with qualified instructors and makes the learning process more effective and personalized."
+        image={img}
+      />
+      ;
     </div>
   );
 };
